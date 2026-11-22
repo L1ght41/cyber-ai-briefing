@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-22",
+  "title": "A vCenter zero-day, AI agents that hack on their own, and a brutal week for AI stocks",
+  "summary": "A China-linked group exploited a critical VMware vCenter flaw for more than two months before it was patched, and Amazon documented autonomous AI agents finding and weaponizing a zero-day with no human steering. On the AI side, a canary experiment showed how leaky the inference supply chain is, Signal moved to block OS-level AI agents, and the Nasdaq had its worst week since 2020.",
+  "sections": [
+    {
+      "key": "cyber",
+      "items": [
+        {
+          "headline": "China-linked Armory Castle exploited a VMware vCenter zero-day for two months before the patch",
+          "body": "Broadcom fixed CVE-2026-123890 (CVSS 9.8), an authentication bypass in the VMware Directory Service, on November 19. Mandiant says the suspected Chinese espionage group Armory Castle (formerly UNC5221) used it from early September, entering through a BeyondTrust Remote Support zero-day, then using a custom tool to create an SSO administrator account, forge SAML tokens and move onto ESXi hosts. vCenter 7.0 has no public patch.",
+          "why": "Golden SAML access to vCenter means control of the whole virtual estate and the ability to bypass MFA. Patch to 8.0 U3m, 9.0.2.0200 or 9.1.1.0200, restrict access to port 2012, and hunt for unexpected SSO admin accounts.",
+          "sources": [
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/"},
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/"}
+          ]
+        },
+        {
+          "headline": "Amazon: an attacker's autonomous AI agents found and exploited a zero-day in 11 minutes",
+          "body": "Amazon Threat Intelligence found a suspected China-linked operator's exposed Cairn control panel, an open-source AI penetration-testing framework. Told only to \"obtain shell access,\" the agents mapped a MONAI Label medical-imaging server, found a path-traversal flaw (CVE-2026-133968) and reached root by planting a reverse shell in Python's startup file, then pivoted into a second university.",
+          "why": "This is a documented case of AI agents discovering and weaponizing a new bug end to end. Unauthenticated, internet-facing research tools are now easy targets; put them behind authentication and network controls.",
+          "sources": [
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/"},
+            {"name": "The Register", "url": "https://www.theregister.com/security/2026/11/20/china-attackers-deployed-ai-agents-that-autonomously-found-and-exploited-a-0-day-to-take-over-a-university-server/5311382"}
+          ]
+        },
+        {
+          "headline": "CISA adds four actively exploited flaws to KEV, with a Monday deadline",
+          "body": "On November 20 CISA added the vCenter bypass, hard-coded credentials in Cisco Expressway (CVE-2026-76466), an Apache Roller deserialization RCE (CVE-2026-129448) and an SAP NetWeaver flaw (CVE-2025-42884) to its Known Exploited Vulnerabilities catalog. Earlier in the week it listed a Synology DSM bug used to deploy ransomware and an exposure in the BerriAI LiteLLM gateway.",
+          "why": "KEV is the most practical patch-priority list available. If you run any of these products, treat them as emergency changes, not routine patch-cycle work.",
+          "sources": [
+            {"name": "CISA (Nov. 20)", "url": "https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog"},
+            {"name": "CISA (Nov. 18)", "url": "https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog"},
+            {"name": "SC Media", "url": "https://www.scworld.com/brief/cisa-adds-four-critical-vulnerabilities-to-known-exploited-catalog"}
+          ]
+        },
+        {
+          "headline": "Rackspace Spot breach exposed customer Kubernetes secrets",
+          "body": "Attackers used compromised credentials to act as legitimate users in some Rackspace Spot organizations, letting them create pods, read Kubernetes Secrets and list nodes and volumes. Rackspace revoked tokens, removed the pods and told affected customers to reissue API tokens and rotate every credential stored in cluster Secrets.",
+          "why": "Kubernetes Secrets often hold database passwords and cloud keys, so one stolen platform login becomes a breach of everything downstream. External secret managers and short-lived credentials limit the damage.",
+          "sources": [
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"}
+          ]
+        },
+        {
+          "headline": "White House replaces its national cyber director after federal outages",
+          "body": "Kirsten Davies, the Department of War's CIO, was named national cyber director, replacing Sean Cairncross. The change followed a series of outages and reported intrusions affecting federal agencies and major companies.",
+          "why": "Leadership turnover at the top of US cyber policy can stall coordination on the national strategy just as federal systems are under visible pressure.",
+          "sources": [
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/president-trump-taps-kirsten-davies-as-national-cyber-director/"},
+            {"name": "Hawaii Tribune-Herald", "url": "https://www.hawaiitribune-herald.com/2026/11/21/nation-world-news/top-white-house-cybersecurity-official-is-replaced/"}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "items": [
+        {
+          "headline": "Two million canary secrets show the AI inference supply chain is leaking prompts",
+          "body": "Dragos researcher HD Moore sent nearly two million prompts, each containing a unique trackable secret, through AI routers and resellers. He found at least three compromised inference providers whose stolen AWS bait keys were used tens of thousands of times, resellers logging and abusing prompts, and providers ignoring Zero Data Retention flags. OpenRouter has since warned some customers that their prompts may have been read.",
+          "why": "Every hop between your app and the model sees plaintext. Never put live credentials in prompts, pin upstream providers instead of accepting default pools, and treat \"no data retention\" as a promise, not a control.",
+          "sources": [
+            {"name": "Ars Technica", "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/"}
+          ]
+        },
+        {
+          "headline": "Signal blocks screenshots by default to keep OS-level AI agents out of chats",
+          "body": "Signal now restricts screenshots on iOS 27 and Android so assistants such as Siri AI and Gemini cannot read decrypted messages off the screen. Its president, Meredith Whittaker, called agentic operating systems an existential threat to privacy and admitted the fix is incomplete; macOS cannot be protected reliably.",
+          "why": "Agentic assistants that read the screen sit outside every app's security boundary. Expect more apps to demand OS-level opt-outs, and factor agent access into mobile threat models.",
+          "sources": [
+            {"name": "Reuters", "url": "https://www.reuters.com/legal/litigation/signal-restricts-screenshots-block-ai-agents-reading-messages-2026-11-20/"},
+            {"name": "The Verge", "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app"},
+            {"name": "TechCrunch", "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"}
+          ]
+        },
+        {
+          "headline": "AI stocks have their worst week since 2020 as Anthropic's IPO fizzles",
+          "body": "The Nasdaq fell about 10% for the week, its worst stretch since March 2020. Nvidia dropped 23% amid its CEO's resignation and a reported SEC accounting probe, and Anthropic gave back much of its 17% debut-day gain to close near its $83 IPO price.",
+          "why": "A tighter funding climate tends to push AI vendors toward cost cutting and consolidation. Security teams should watch the vendor risk of AI tools they depend on.",
+          "sources": [
+            {"name": "NPR", "url": "https://www.npr.org/2026/11/21/nx-s1-6048729/ai-stock-markets-anthropic-nvidia"},
+            {"name": "CNBC", "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html"}
+          ]
+        },
+        {
+          "headline": "Trump threatens a \"tremendous tax\" on US firms building data centers abroad",
+          "body": "The president said American companies that build AI data centers overseas will face heavy penalties, though he gave no details and said his staff had not yet been briefed. Earlier in the week Commerce tightened rules to stop Chinese firms from reaching US chips remotely through foreign data centers.",
+          "why": "Where AI compute can legally run is becoming a policy question, with knock-on effects for data residency, sovereign-cloud plans and the cost of AI infrastructure.",
+          "sources": [
+            {"name": "AP News", "url": "https://apnews.com/article/f1ac03b73d13445400eeed8631d9d879"},
+            {"name": "Reuters", "url": "https://www.reuters.com/technology/trump-says-us-penalize-firms-building-data-centers-abroad-2026-11-20/"}
+          ]
+        },
+        {
+          "headline": "New frontier models: Gemini 4 Neon and GPT-6.2 Astra and Sol",
+          "body": "Google released Gemini 4 Neon, aimed at software engineering and knowledge work, at $3 / $15 per million tokens with a 1M-token context window and early access for cyber defenders in its Fairwind Program. OpenAI shipped GPT-6.2 Astra and Sol, which it says improve on demanding tasks while using fewer output tokens.",
+          "why": "Both labs are now offering vetted defender programs alongside general releases, a sign that model access is becoming part of the security toolchain.",
+          "sources": [
+            {"name": "Google", "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"},
+            {"name": "OpenAI", "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"}
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaway": "Attack timelines are shrinking: AI agents went from reconnaissance to a working exploit in minutes, and the most serious bug of the week was used for two months before anyone could patch it. Prioritize KEV-listed fixes, lock down management planes like vCenter, and keep secrets out of AI prompts and plaintext stores."
+}

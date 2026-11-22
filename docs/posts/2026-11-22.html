@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A vCenter zero-day, AI agents that hack on their own, and a brutal week for AI stocks | Signal &amp; Shield</title>
+<meta name="description" content="A China-linked group exploited a critical VMware vCenter flaw for more than two months before it was patched, and Amazon documented autonomous AI agents finding and weaponizing a zero-day with no human steering. On the AI side, a canary experiment showed how leaky the inference supply chain is, Signal moved to block OS-level AI agents, and the Nasdaq had its worst week since 2020.">
+<link rel="canonical" href="https://l1ght41.github.io/cyber-ai-briefing/posts/2026-11-22.html">
+<meta property="og:title" content="A vCenter zero-day, AI agents that hack on their own, and a brutal week for AI stocks | Signal &amp; Shield">
+<meta property="og:description" content="A China-linked group exploited a critical VMware vCenter flaw for more than two months before it was patched, and Amazon documented autonomous AI agents finding and weaponizing a zero-day with no human steering. On the AI side, a canary experiment showed how leaky the inference supply chain is, Signal moved to block OS-level AI agents, and the Nasdaq had its worst week since 2020.">
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" title="Signal & Shield" href="../feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181d'/%3E%3Cpath d='M16 6l8 3v6c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V9z' fill='none' stroke='%23e8590c' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-row">
+    <a class="brand" href="../index.html" aria-label="Signal & Shield home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M16 4l10 3.6v7.2c0 6-4.2 10.6-10 13.2C10.2 25.4 6 20.8 6 14.8V7.6z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 16h3l2-4 2 8 2-4h1" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Signal & Shield</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../index.html">Briefings</a>
+      <a href="../archive.html">Archive</a>
+      <a href="../about.html">About</a>
+      <a class="nav-cta" href="https://simon-boadi-cybersecurity.pplx.app">Portfolio</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap narrow">
+<p class="kicker">Daily briefing &middot; <time datetime="2026-11-22">Sunday, November 22, 2026</time></p>
+<h1 class="post-title">A vCenter zero-day, AI agents that hack on their own, and a brutal week for AI stocks</h1>
+<p class="lede">A China-linked group exploited a critical VMware vCenter flaw for more than two months before it was patched, and Amazon documented autonomous AI agents finding and weaponizing a zero-day with no human steering. On the AI side, a canary experiment showed how leaky the inference supply chain is, Signal moved to block OS-level AI agents, and the Nasdaq had its worst week since 2020.</p>
+<section class="desk desk-cyber" aria-labelledby="h-cyber">
+  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">5 stories</span></h2>
+  <article class="item">
+  <div class="item-num">01</div>
+  <div class="item-body">
+    <h3>China-linked Armory Castle exploited a VMware vCenter zero-day for two months before the patch</h3>
+    <p>Broadcom fixed CVE-2026-123890 (CVSS 9.8), an authentication bypass in the VMware Directory Service, on November 19. Mandiant says the suspected Chinese espionage group Armory Castle (formerly UNC5221) used it from early September, entering through a BeyondTrust Remote Support zero-day, then using a custom tool to create an SSO administrator account, forge SAML tokens and move onto ESXi hosts. vCenter 7.0 has no public patch.</p>
+    <p class="why"><strong>Why it matters</strong> Golden SAML access to vCenter means control of the whole virtual estate and the ability to bypass MFA. Patch to 8.0 U3m, 9.0.2.0200 or 9.1.1.0200, restrict access to port 2012, and hunt for unexpected SSO admin accounts.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/newly-patched-vmware-vcenter-flaw-exploited-as-zero-day-by-chinese-apt/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html" rel="noopener" target="_blank">The Hacker News</a>, <a href="https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/" rel="noopener" target="_blank">BleepingComputer</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">02</div>
+  <div class="item-body">
+    <h3>Amazon: an attacker&#x27;s autonomous AI agents found and exploited a zero-day in 11 minutes</h3>
+    <p>Amazon Threat Intelligence found a suspected China-linked operator&#x27;s exposed Cairn control panel, an open-source AI penetration-testing framework. Told only to &quot;obtain shell access,&quot; the agents mapped a MONAI Label medical-imaging server, found a path-traversal flaw (CVE-2026-133968) and reached root by planting a reverse shell in Python&#x27;s startup file, then pivoted into a second university.</p>
+    <p class="why"><strong>Why it matters</strong> This is a documented case of AI agents discovering and weaponizing a new bug end to end. Unauthenticated, internet-facing research tools are now easy targets; put them behind authentication and network controls.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/amazon-china-linked-hackers-ai-agents-exploited-medical-software-zero-day/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.theregister.com/security/2026/11/20/china-attackers-deployed-ai-agents-that-autonomously-found-and-exploited-a-0-day-to-take-over-a-university-server/5311382" rel="noopener" target="_blank">The Register</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">03</div>
+  <div class="item-body">
+    <h3>CISA adds four actively exploited flaws to KEV, with a Monday deadline</h3>
+    <p>On November 20 CISA added the vCenter bypass, hard-coded credentials in Cisco Expressway (CVE-2026-76466), an Apache Roller deserialization RCE (CVE-2026-129448) and an SAP NetWeaver flaw (CVE-2025-42884) to its Known Exploited Vulnerabilities catalog. Earlier in the week it listed a Synology DSM bug used to deploy ransomware and an exposure in the BerriAI LiteLLM gateway.</p>
+    <p class="why"><strong>Why it matters</strong> KEV is the most practical patch-priority list available. If you run any of these products, treat them as emergency changes, not routine patch-cycle work.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA (Nov. 20)</a>, <a href="https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA (Nov. 18)</a>, <a href="https://www.scworld.com/brief/cisa-adds-four-critical-vulnerabilities-to-known-exploited-catalog" rel="noopener" target="_blank">SC Media</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">04</div>
+  <div class="item-body">
+    <h3>Rackspace Spot breach exposed customer Kubernetes secrets</h3>
+    <p>Attackers used compromised credentials to act as legitimate users in some Rackspace Spot organizations, letting them create pods, read Kubernetes Secrets and list nodes and volumes. Rackspace revoked tokens, removed the pods and told affected customers to reissue API tokens and rotate every credential stored in cluster Secrets.</p>
+    <p class="why"><strong>Why it matters</strong> Kubernetes Secrets often hold database passwords and cloud keys, so one stolen platform login becomes a breach of everything downstream. External secret managers and short-lived credentials limit the damage.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/" rel="noopener" target="_blank">BleepingComputer</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">05</div>
+  <div class="item-body">
+    <h3>White House replaces its national cyber director after federal outages</h3>
+    <p>Kirsten Davies, the Department of War&#x27;s CIO, was named national cyber director, replacing Sean Cairncross. The change followed a series of outages and reported intrusions affecting federal agencies and major companies.</p>
+    <p class="why"><strong>Why it matters</strong> Leadership turnover at the top of US cyber policy can stall coordination on the national strategy just as federal systems are under visible pressure.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/president-trump-taps-kirsten-davies-as-national-cyber-director/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.hawaiitribune-herald.com/2026/11/21/nation-world-news/top-white-house-cybersecurity-official-is-replaced/" rel="noopener" target="_blank">Hawaii Tribune-Herald</a></p>
+  </div>
+</article>
+</section>
+<section class="desk desk-ai" aria-labelledby="h-ai">
+  <h2 id="h-ai"><span class="tag tag-ai">AI & Tech</span><span class="count">5 stories</span></h2>
+  <article class="item">
+  <div class="item-num">01</div>
+  <div class="item-body">
+    <h3>Two million canary secrets show the AI inference supply chain is leaking prompts</h3>
+    <p>Dragos researcher HD Moore sent nearly two million prompts, each containing a unique trackable secret, through AI routers and resellers. He found at least three compromised inference providers whose stolen AWS bait keys were used tens of thousands of times, resellers logging and abusing prompts, and providers ignoring Zero Data Retention flags. OpenRouter has since warned some customers that their prompts may have been read.</p>
+    <p class="why"><strong>Why it matters</strong> Every hop between your app and the model sees plaintext. Never put live credentials in prompts, pin upstream providers instead of accepting default pools, and treat &quot;no data retention&quot; as a promise, not a control.</p>
+    <p class="sources"><span>Sources</span> <a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/" rel="noopener" target="_blank">Ars Technica</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">02</div>
+  <div class="item-body">
+    <h3>Signal blocks screenshots by default to keep OS-level AI agents out of chats</h3>
+    <p>Signal now restricts screenshots on iOS 27 and Android so assistants such as Siri AI and Gemini cannot read decrypted messages off the screen. Its president, Meredith Whittaker, called agentic operating systems an existential threat to privacy and admitted the fix is incomplete; macOS cannot be protected reliably.</p>
+    <p class="why"><strong>Why it matters</strong> Agentic assistants that read the screen sit outside every app&#x27;s security boundary. Expect more apps to demand OS-level opt-outs, and factor agent access into mobile threat models.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/legal/litigation/signal-restricts-screenshots-block-ai-agents-reading-messages-2026-11-20/" rel="noopener" target="_blank">Reuters</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app" rel="noopener" target="_blank">The Verge</a>, <a href="https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/" rel="noopener" target="_blank">TechCrunch</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">03</div>
+  <div class="item-body">
+    <h3>AI stocks have their worst week since 2020 as Anthropic&#x27;s IPO fizzles</h3>
+    <p>The Nasdaq fell about 10% for the week, its worst stretch since March 2020. Nvidia dropped 23% amid its CEO&#x27;s resignation and a reported SEC accounting probe, and Anthropic gave back much of its 17% debut-day gain to close near its $83 IPO price.</p>
+    <p class="why"><strong>Why it matters</strong> A tighter funding climate tends to push AI vendors toward cost cutting and consolidation. Security teams should watch the vendor risk of AI tools they depend on.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.npr.org/2026/11/21/nx-s1-6048729/ai-stock-markets-anthropic-nvidia" rel="noopener" target="_blank">NPR</a>, <a href="https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html" rel="noopener" target="_blank">CNBC</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">04</div>
+  <div class="item-body">
+    <h3>Trump threatens a &quot;tremendous tax&quot; on US firms building data centers abroad</h3>
+    <p>The president said American companies that build AI data centers overseas will face heavy penalties, though he gave no details and said his staff had not yet been briefed. Earlier in the week Commerce tightened rules to stop Chinese firms from reaching US chips remotely through foreign data centers.</p>
+    <p class="why"><strong>Why it matters</strong> Where AI compute can legally run is becoming a policy question, with knock-on effects for data residency, sovereign-cloud plans and the cost of AI infrastructure.</p>
+    <p class="sources"><span>Sources</span> <a href="https://apnews.com/article/f1ac03b73d13445400eeed8631d9d879" rel="noopener" target="_blank">AP News</a>, <a href="https://www.reuters.com/technology/trump-says-us-penalize-firms-building-data-centers-abroad-2026-11-20/" rel="noopener" target="_blank">Reuters</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">05</div>
+  <div class="item-body">
+    <h3>New frontier models: Gemini 4 Neon and GPT-6.2 Astra and Sol</h3>
+    <p>Google released Gemini 4 Neon, aimed at software engineering and knowledge work, at $3 / $15 per million tokens with a 1M-token context window and early access for cyber defenders in its Fairwind Program. OpenAI shipped GPT-6.2 Astra and Sol, which it says improve on demanding tasks while using fewer output tokens.</p>
+    <p class="why"><strong>Why it matters</strong> Both labs are now offering vetted defender programs alongside general releases, a sign that model access is becoming part of the security toolchain.</p>
+    <p class="sources"><span>Sources</span> <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" rel="noopener" target="_blank">Google</a>, <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" rel="noopener" target="_blank">OpenAI</a></p>
+  </div>
+</article>
+</section>
+<aside class="takeaway"><h2>The takeaway</h2><p>Attack timelines are shrinking: AI agents went from reconnaissance to a working exploit in minutes, and the most serious bug of the week was used for two months before anyone could patch it. Prioritize KEV-listed fixes, lock down management planes like vCenter, and keep secrets out of AI prompts and plaintext stores.</p></aside>
+<nav class="post-nav" aria-label="Briefing navigation"></nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>Signal & Shield &middot; A daily briefing on cybersecurity and AI, by Simon Boadi.</p>
+    <p><a href="https://simon-boadi-cybersecurity.pplx.app">Portfolio</a> &middot; <a href="../feed.xml">RSS</a> &middot; Summaries link to original reporting; read the sources for full detail.</p>
+  </div>
+</footer>
+</body>
+</html>
