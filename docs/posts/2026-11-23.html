@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScreenConnect attacks hit MSPs, GL.iNet&#x27;s cloud is used to plant router malware, and OpenAI proposes a speed limit for AI | Signal &amp; Shield</title>
+<meta name="description" content="Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet&#x27;s cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI&#x27;s chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.">
+<link rel="canonical" href="https://l1ght41.github.io/cyber-ai-briefing/posts/2026-11-23.html">
+<meta property="og:title" content="ScreenConnect attacks hit MSPs, GL.iNet&#x27;s cloud is used to plant router malware, and OpenAI proposes a speed limit for AI | Signal &amp; Shield">
+<meta property="og:description" content="Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet&#x27;s cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI&#x27;s chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.">
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" title="Signal & Shield" href="../feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181d'/%3E%3Cpath d='M16 6l8 3v6c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V9z' fill='none' stroke='%23e8590c' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-row">
+    <a class="brand" href="../index.html" aria-label="Signal & Shield home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M16 4l10 3.6v7.2c0 6-4.2 10.6-10 13.2C10.2 25.4 6 20.8 6 14.8V7.6z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 16h3l2-4 2 8 2-4h1" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Signal & Shield</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../index.html">Briefings</a>
+      <a href="../archive.html">Archive</a>
+      <a href="../about.html">About</a>
+      <a class="nav-cta" href="https://simon-boadi-cybersecurity.pplx.app">Portfolio</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap narrow">
+<p class="kicker">Daily briefing &middot; <time datetime="2026-11-23">Monday, November 23, 2026</time></p>
+<h1 class="post-title">ScreenConnect attacks hit MSPs, GL.iNet&#x27;s cloud is used to plant router malware, and OpenAI proposes a speed limit for AI</h1>
+<p class="lede">Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet&#x27;s cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI&#x27;s chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.</p>
+<section class="desk desk-cyber" aria-labelledby="h-cyber">
+  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">6 stories</span></h2>
+  <article class="item">
+  <div class="item-num">01</div>
+  <div class="item-body">
+    <h3>ScreenConnect campaigns breach MSPs and try to spread to technicians&#x27; workstations</h3>
+    <p>Huntress says attackers abused a blank-by-default access key in the third-party RMM+ extension (versions 1.0.31 and 1.0.32) to run commands through cloud-hosted ScreenConnect panels, compromising at least 6 MSPs and 288 hosts across 48 organizations within 90 minutes. They deployed rogue ScreenConnect clients and SCKit, a toolkit built to jump to a connecting technician&#x27;s machine through CVE-2026-84869 (CVSS 9.9). A separate wave is spraying MSP servers with that same flaw. ConnectWise disabled five RMM+ family extensions across about 400 partner environments.</p>
+    <p class="why"><strong>Why it matters</strong> One MSP technician session can reach dozens of customer networks. Update ScreenConnect host clients to 26.6.5 or later, disable the RMM+ extensions, review Run Command and Toolbox history, and avoid interactive sessions with endpoints you suspect are infected.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html" rel="noopener" target="_blank">The Hacker News</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">02</div>
+  <div class="item-body">
+    <h3>Attackers used GL.iNet&#x27;s cloud management service to infect routers and KVM devices</h3>
+    <p>GL.iNet confirmed that an intruder exploited a flaw in its GoodCloud remote-management service to install malware on some customers&#x27; routers and KVM devices, with users reporting root-level reverse shells and backdoors. The company has fixed the cloud flaw and released security firmware that it says removes the malware, but the cloud-side fix does not clean devices that were already infected.</p>
+    <p class="why"><strong>Why it matters</strong> A compromised KVM can give an attacker hands-on control of the servers plugged into it. Update the firmware, check attached machines, and treat VPN keys, admin passwords and SSH keys on affected devices as exposed.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html" rel="noopener" target="_blank">The Hacker News</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">03</div>
+  <div class="item-body">
+    <h3>Microsoft Entra Connect Health flaw exposed admin emails and tenant details</h3>
+    <p>Microsoft is notifying customers that attackers exploited a vulnerability in the Entra Connect Health API to read tenant metadata, including technical-contact and administrator email addresses, tenant IDs, license tiers and directory-sync status. Microsoft fixed the flaw on the service side on November 19 and says no passwords, tokens or valid keys were exposed, and that it found no unauthorized configuration changes.</p>
+    <p class="why"><strong>Why it matters</strong> Admin email lists plus tenant details are ideal material for targeted phishing aimed at your identity team. Warn admins, and confirm phishing-resistant MFA is enforced on privileged accounts.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-access-tenant-data/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.helpnetsecurity.com/2026/11/23/microsoft-entra-connect-health-vulnerability-tenant-data/" rel="noopener" target="_blank">Help Net Security</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">04</div>
+  <div class="item-body">
+    <h3>Exploited flaw in legacy ASP.NET library Idunno.AntiCsrf allows one-request takeover</h3>
+    <p>CVE-2026-131914 (CVSS 9.3) in Idunno.AntiCsrf 0.9.1.0 and 0.9.1 Beta lets an unauthenticated attacker send a single HTTP POST with a serialized .NET payload and run code as the IIS worker process. Mandiant reports active exploitation, and researchers are urging teams to stop using the library.</p>
+    <p class="why"><strong>Why it matters</strong> Old WebForms apps often carry forgotten third-party modules. Search build artifacts and servers for Idunno.AntiCsrf.dll and remove or replace it.</p>
+    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html" rel="noopener" target="_blank">The Hacker News</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">05</div>
+  <div class="item-body">
+    <h3>Ghostscript bug turns ordinary file uploads into server compromise</h3>
+    <p>Security firm pwn.ai showed that CVE-2026-125396, a use-after-free in Ghostscript&#x27;s font loading, can switch off its -dSAFER sandbox. Through upload, preview and print features in about ten applications, including Roundcube, WordPress plugins and Linux print queues, a crafted file ran commands on the server, sometimes with no login. Artifex fixed it in Ghostscript 10.08.0 in September, and no in-the-wild attacks have been reported.</p>
+    <p class="why"><strong>Why it matters</strong> Libraries such as ImageMagick and Pillow can hand files to Ghostscript even when they are named .png or .pdf. Confirm 10.08.0 or later on any server that processes uploads.</p>
+    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html" rel="noopener" target="_blank">The Hacker News</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">06</div>
+  <div class="item-body">
+    <h3>FBI investigates an apparent breach of its national crime database</h3>
+    <p>The FBI is investigating an apparent intrusion into the National Crime Information Center, the database federal, state and local police use to share records on fugitives, missing persons and criminal histories, according to people briefed on the matter. It is reportedly the second FBI breach in about two months, and it is not yet clear how attackers got in or what was taken.</p>
+    <p class="why"><strong>Why it matters</strong> NCIC connects thousands of agencies, so any confirmed access raises questions about the integrity of records officers rely on during stops and investigations.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.nbcnews.com/politics/justice-department/fbi-investigating-potential-breach-crime-database-rcna610536" rel="noopener" target="_blank">NBC News</a>, <a href="https://www.securityweek.com/fbi-investigating-apparent-hack-of-its-key-national-criminal-justice-database-ap-source-says/" rel="noopener" target="_blank">SecurityWeek</a></p>
+  </div>
+</article>
+</section>
+<section class="desk desk-ai" aria-labelledby="h-ai">
+  <h2 id="h-ai"><span class="tag tag-ai">AI & Tech</span><span class="count">5 stories</span></h2>
+  <article class="item">
+  <div class="item-num">01</div>
+  <div class="item-body">
+    <h3>OpenRouter drops three providers and pulls 125 endpoints from Zero Data Retention</h3>
+    <p>Following Dragos research showing attackers had been stealing prompts from inside three AI inference providers since mid-July, OpenRouter removed three providers, revoked Zero Data Retention eligibility for 125 endpoints and notified potentially affected customers. It says its own systems were not breached and that it is turning the researchers&#x27; canary testing into an ongoing check.</p>
+    <p class="why"><strong>Why it matters</strong> Routers and gateways can&#x27;t vouch for every provider behind them. If you use one, pin specific upstream providers and assume anything sent through a shared pool may be logged.</p>
+    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html" rel="noopener" target="_blank">The Hacker News</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">02</div>
+  <div class="item-body">
+    <h3>OpenAI&#x27;s chief scientist proposes shared industry limits on AI capability</h3>
+    <p>Jakub Pachocki argued that perplexity, a measure of how well a model predicts text, should serve as a common yardstick for AI progress across labs. He proposed limits that developers would agree not to cross until tools to understand and monitor AI behavior reach concrete milestones, and said AI could speed up training research as soon as 2027. Sam Altman called the post the most important thing OpenAI has published in a while.</p>
+    <p class="why"><strong>Why it matters</strong> A measurable, cross-lab threshold would give regulators and governance teams something concrete to audit, though it depends on competitors agreeing to it.</p>
+    <p class="sources"><span>Sources</span> <a href="https://openai.com/index/perplexity-and-intelligence/" rel="noopener" target="_blank">OpenAI</a>, <a href="https://www.reuters.com/business/openai-scientist-proposes-industry-ai-limits-tied-model-intelligence-metric-2026-11-22/" rel="noopener" target="_blank">Reuters</a>, <a href="https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/" rel="noopener" target="_blank">TechCrunch</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">03</div>
+  <div class="item-body">
+    <h3>METR: the length of tasks AI agents can finish is doubling about every 3.6 months</h3>
+    <p>In its latest capability update, the evaluation group METR found that the time horizons of frontier models on its task suites are doubling roughly every 3.6 months, and warned that its own measures are getting harder to keep ahead of the models.</p>
+    <p class="why"><strong>Why it matters</strong> Agents that can carry longer tasks end to end change both offense and defense. Threat models and automation plans built on last year&#x27;s capabilities are already out of date.</p>
+    <p class="sources"><span>Sources</span> <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" rel="noopener" target="_blank">METR</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">04</div>
+  <div class="item-body">
+    <h3>US intelligence chief says expect more outages as systems are patched for AI-found flaws</h3>
+    <p>Director of National Intelligence Jay Clayton said on Sunday that Americans should expect more technology glitches and interruptions as organizations upgrade aging systems, repeating that recent outages were not coordinated or state-sponsored attacks. Officials have tied some disruptions, including an NSA network outage, to rushed patching of a PHP flaw found with AI help.</p>
+    <p class="why"><strong>Why it matters</strong> AI is speeding up bug discovery faster than many organizations can safely test fixes. Staged rollouts, rollback plans and change windows matter more now, not less.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/business/finance/us-intelligence-chief-predicts-more-tech-outages-systems-undergo-upgrades-2026-11-22/" rel="noopener" target="_blank">Reuters</a>, <a href="http://apnews.com/article/tech-outage-ai-security-patch-0c0f0cf4983a0f81ba88c4c4d2b8383f" rel="noopener" target="_blank">AP News</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">05</div>
+  <div class="item-body">
+    <h3>Governors call for federal rules on frontier AI while keeping state authority</h3>
+    <p>The National Governors Association released bipartisan principles asking Washington to handle national risks from the most powerful AI systems, including independent safety reviews and mandatory reporting of serious security and safety incidents, while states keep authority over consumer protection, discrimination and AI&#x27;s effects on jobs. The plan also urges states to harden their own systems against AI-enabled cyber threats.</p>
+    <p class="why"><strong>Why it matters</strong> Incident-reporting duties for AI developers are moving from proposal toward expectation. Governance programs should start tracking AI security incidents with the same discipline as data breaches.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.nga.org/news/press-releases/governors-call-for-ai-action/" rel="noopener" target="_blank">National Governors Association</a>, <a href="https://www.bloomberg.com/news/articles/2026-11-22/governors-call-for-federal-ai-rules-without-sidelining-states" rel="noopener" target="_blank">Bloomberg</a></p>
+  </div>
+</article>
+</section>
+<aside class="takeaway"><h2>The takeaway</h2><p>This week&#x27;s intrusions went through management planes: remote-support panels, cloud device managers and identity monitoring APIs. Inventory every tool that can push commands or read tenant data, patch and lock it down first, and plan patch rollouts that can absorb the faster pace AI-driven bug discovery now demands.</p></aside>
+<nav class="post-nav" aria-label="Briefing navigation"><a class="older" href="2026-11-22.html">Older: Sunday, November 22, 2026 &rarr;</a></nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>Signal & Shield &middot; A daily briefing on cybersecurity and AI, by Simon Boadi.</p>
+    <p><a href="https://simon-boadi-cybersecurity.pplx.app">Portfolio</a> &middot; <a href="../feed.xml">RSS</a> &middot; Summaries link to original reporting; read the sources for full detail.</p>
+  </div>
+</footer>
+</body>
+</html>

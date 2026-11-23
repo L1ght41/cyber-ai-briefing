@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-23",
+  "title": "ScreenConnect attacks hit MSPs, GL.iNet's cloud is used to plant router malware, and OpenAI proposes a speed limit for AI",
+  "summary": "Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet's cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI's chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.",
+  "sections": [
+    {
+      "key": "cyber",
+      "items": [
+        {
+          "headline": "ScreenConnect campaigns breach MSPs and try to spread to technicians' workstations",
+          "body": "Huntress says attackers abused a blank-by-default access key in the third-party RMM+ extension (versions 1.0.31 and 1.0.32) to run commands through cloud-hosted ScreenConnect panels, compromising at least 6 MSPs and 288 hosts across 48 organizations within 90 minutes. They deployed rogue ScreenConnect clients and SCKit, a toolkit built to jump to a connecting technician's machine through CVE-2026-84869 (CVSS 9.9). A separate wave is spraying MSP servers with that same flaw. ConnectWise disabled five RMM+ family extensions across about 400 partner environments.",
+          "why": "One MSP technician session can reach dozens of customer networks. Update ScreenConnect host clients to 26.6.5 or later, disable the RMM+ extensions, review Run Command and Toolbox history, and avoid interactive sessions with endpoints you suspect are infected.",
+          "sources": [
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign/"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/"},
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html"}
+          ]
+        },
+        {
+          "headline": "Attackers used GL.iNet's cloud management service to infect routers and KVM devices",
+          "body": "GL.iNet confirmed that an intruder exploited a flaw in its GoodCloud remote-management service to install malware on some customers' routers and KVM devices, with users reporting root-level reverse shells and backdoors. The company has fixed the cloud flaw and released security firmware that it says removes the malware, but the cloud-side fix does not clean devices that were already infected.",
+          "why": "A compromised KVM can give an attacker hands-on control of the servers plugged into it. Update the firmware, check attached machines, and treat VPN keys, admin passwords and SSH keys on affected devices as exposed.",
+          "sources": [
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"},
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html"}
+          ]
+        },
+        {
+          "headline": "Microsoft Entra Connect Health flaw exposed admin emails and tenant details",
+          "body": "Microsoft is notifying customers that attackers exploited a vulnerability in the Entra Connect Health API to read tenant metadata, including technical-contact and administrator email addresses, tenant IDs, license tiers and directory-sync status. Microsoft fixed the flaw on the service side on November 19 and says no passwords, tokens or valid keys were exposed, and that it found no unauthorized configuration changes.",
+          "why": "Admin email lists plus tenant details are ideal material for targeted phishing aimed at your identity team. Warn admins, and confirm phishing-resistant MFA is enforced on privileged accounts.",
+          "sources": [
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-access-tenant-data/"},
+            {"name": "Help Net Security", "url": "https://www.helpnetsecurity.com/2026/11/23/microsoft-entra-connect-health-vulnerability-tenant-data/"}
+          ]
+        },
+        {
+          "headline": "Exploited flaw in legacy ASP.NET library Idunno.AntiCsrf allows one-request takeover",
+          "body": "CVE-2026-131914 (CVSS 9.3) in Idunno.AntiCsrf 0.9.1.0 and 0.9.1 Beta lets an unauthenticated attacker send a single HTTP POST with a serialized .NET payload and run code as the IIS worker process. Mandiant reports active exploitation, and researchers are urging teams to stop using the library.",
+          "why": "Old WebForms apps often carry forgotten third-party modules. Search build artifacts and servers for Idunno.AntiCsrf.dll and remove or replace it.",
+          "sources": [
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html"}
+          ]
+        },
+        {
+          "headline": "Ghostscript bug turns ordinary file uploads into server compromise",
+          "body": "Security firm pwn.ai showed that CVE-2026-125396, a use-after-free in Ghostscript's font loading, can switch off its -dSAFER sandbox. Through upload, preview and print features in about ten applications, including Roundcube, WordPress plugins and Linux print queues, a crafted file ran commands on the server, sometimes with no login. Artifex fixed it in Ghostscript 10.08.0 in September, and no in-the-wild attacks have been reported.",
+          "why": "Libraries such as ImageMagick and Pillow can hand files to Ghostscript even when they are named .png or .pdf. Confirm 10.08.0 or later on any server that processes uploads.",
+          "sources": [
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html"}
+          ]
+        },
+        {
+          "headline": "FBI investigates an apparent breach of its national crime database",
+          "body": "The FBI is investigating an apparent intrusion into the National Crime Information Center, the database federal, state and local police use to share records on fugitives, missing persons and criminal histories, according to people briefed on the matter. It is reportedly the second FBI breach in about two months, and it is not yet clear how attackers got in or what was taken.",
+          "why": "NCIC connects thousands of agencies, so any confirmed access raises questions about the integrity of records officers rely on during stops and investigations.",
+          "sources": [
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/"},
+            {"name": "NBC News", "url": "https://www.nbcnews.com/politics/justice-department/fbi-investigating-potential-breach-crime-database-rcna610536"},
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/fbi-investigating-apparent-hack-of-its-key-national-criminal-justice-database-ap-source-says/"}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "items": [
+        {
+          "headline": "OpenRouter drops three providers and pulls 125 endpoints from Zero Data Retention",
+          "body": "Following Dragos research showing attackers had been stealing prompts from inside three AI inference providers since mid-July, OpenRouter removed three providers, revoked Zero Data Retention eligibility for 125 endpoints and notified potentially affected customers. It says its own systems were not breached and that it is turning the researchers' canary testing into an ongoing check.",
+          "why": "Routers and gateways can't vouch for every provider behind them. If you use one, pin specific upstream providers and assume anything sent through a shared pool may be logged.",
+          "sources": [
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html"}
+          ]
+        },
+        {
+          "headline": "OpenAI's chief scientist proposes shared industry limits on AI capability",
+          "body": "Jakub Pachocki argued that perplexity, a measure of how well a model predicts text, should serve as a common yardstick for AI progress across labs. He proposed limits that developers would agree not to cross until tools to understand and monitor AI behavior reach concrete milestones, and said AI could speed up training research as soon as 2027. Sam Altman called the post the most important thing OpenAI has published in a while.",
+          "why": "A measurable, cross-lab threshold would give regulators and governance teams something concrete to audit, though it depends on competitors agreeing to it.",
+          "sources": [
+            {"name": "OpenAI", "url": "https://openai.com/index/perplexity-and-intelligence/"},
+            {"name": "Reuters", "url": "https://www.reuters.com/business/openai-scientist-proposes-industry-ai-limits-tied-model-intelligence-metric-2026-11-22/"},
+            {"name": "TechCrunch", "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/"}
+          ]
+        },
+        {
+          "headline": "METR: the length of tasks AI agents can finish is doubling about every 3.6 months",
+          "body": "In its latest capability update, the evaluation group METR found that the time horizons of frontier models on its task suites are doubling roughly every 3.6 months, and warned that its own measures are getting harder to keep ahead of the models.",
+          "why": "Agents that can carry longer tasks end to end change both offense and defense. Threat models and automation plans built on last year's capabilities are already out of date.",
+          "sources": [
+            {"name": "METR", "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/"}
+          ]
+        },
+        {
+          "headline": "US intelligence chief says expect more outages as systems are patched for AI-found flaws",
+          "body": "Director of National Intelligence Jay Clayton said on Sunday that Americans should expect more technology glitches and interruptions as organizations upgrade aging systems, repeating that recent outages were not coordinated or state-sponsored attacks. Officials have tied some disruptions, including an NSA network outage, to rushed patching of a PHP flaw found with AI help.",
+          "why": "AI is speeding up bug discovery faster than many organizations can safely test fixes. Staged rollouts, rollback plans and change windows matter more now, not less.",
+          "sources": [
+            {"name": "Reuters", "url": "https://www.reuters.com/business/finance/us-intelligence-chief-predicts-more-tech-outages-systems-undergo-upgrades-2026-11-22/"},
+            {"name": "AP News", "url": "http://apnews.com/article/tech-outage-ai-security-patch-0c0f0cf4983a0f81ba88c4c4d2b8383f"}
+          ]
+        },
+        {
+          "headline": "Governors call for federal rules on frontier AI while keeping state authority",
+          "body": "The National Governors Association released bipartisan principles asking Washington to handle national risks from the most powerful AI systems, including independent safety reviews and mandatory reporting of serious security and safety incidents, while states keep authority over consumer protection, discrimination and AI's effects on jobs. The plan also urges states to harden their own systems against AI-enabled cyber threats.",
+          "why": "Incident-reporting duties for AI developers are moving from proposal toward expectation. Governance programs should start tracking AI security incidents with the same discipline as data breaches.",
+          "sources": [
+            {"name": "National Governors Association", "url": "https://www.nga.org/news/press-releases/governors-call-for-ai-action/"},
+            {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-11-22/governors-call-for-federal-ai-rules-without-sidelining-states"}
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaway": "This week's intrusions went through management planes: remote-support panels, cloud device managers and identity monitoring APIs. Inventory every tool that can push commands or read tenant data, patch and lock it down first, and plan patch rollouts that can absorb the faster pace AI-driven bug discovery now demands."
+}
