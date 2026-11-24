@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Signal &amp; Shield | Daily cybersecurity &amp; AI briefing</title>
-<meta name="description" content="Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet&#x27;s cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI&#x27;s chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.">
+<meta name="description" content="Microsoft confirmed that a flaw in Azure API Management Classic tiers was used to go after stored credentials, which Norwegian authorities tied to attacks on energy firms. Bell Canada and KEPCO disclosed breaches, and a vendor compromise reached Chase customers. In AI, Anthropic and OpenAI shipped agent tools aimed at code review and live patching, Nvidia reinstated Jensen Huang, and two states sued SpaceX over Grok.">
 <link rel="canonical" href="https://l1ght41.github.io/cyber-ai-briefing/">
 <meta property="og:title" content="Signal &amp; Shield | Daily cybersecurity &amp; AI briefing">
-<meta property="og:description" content="Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet&#x27;s cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI&#x27;s chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.">
+<meta property="og:description" content="Microsoft confirmed that a flaw in Azure API Management Classic tiers was used to go after stored credentials, which Norwegian authorities tied to attacks on energy firms. Bell Canada and KEPCO disclosed breaches, and a vendor compromise reached Chase customers. In AI, Anthropic and OpenAI shipped agent tools aimed at code review and live patching, Nvidia reinstated Jensen Huang, and two states sued SpaceX over Grok.">
 <meta property="og:type" content="article">
 <link rel="alternate" type="application/rss+xml" title="Signal & Shield" href="feed.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181d'/%3E%3Cpath d='M16 6l8 3v6c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V9z' fill='none' stroke='%23e8590c' stroke-width='2.4'/%3E%3C/svg%3E">
@@ -35,62 +35,54 @@
 <main id="main">
 <section class="hero">
   <div class="wrap">
-    <p class="kicker">Today's briefing &middot; <time datetime="2026-11-23">Monday, November 23, 2026</time></p>
-    <h1><a href="posts/2026-11-23.html">ScreenConnect attacks hit MSPs, GL.iNet&#x27;s cloud is used to plant router malware, and OpenAI proposes a speed limit for AI</a></h1>
-    <p class="lede">Attackers are going after the tools that manage other systems: ScreenConnect deployments at managed service providers, GL.iNet&#x27;s cloud management service, and a Microsoft Entra monitoring API. In AI, OpenRouter cut three providers after the prompt-theft research, OpenAI&#x27;s chief scientist proposed industry-wide limits on model capability, and US officials warned that outages caused by patching AI-found flaws will continue.</p>
-    <p><a class="btn" href="posts/2026-11-23.html">Read today's briefing</a></p>
+    <p class="kicker">Today's briefing &middot; <time datetime="2026-11-24">Tuesday, November 24, 2026</time></p>
+    <h1><a href="posts/2026-11-24.html">An exploited Azure API Management flaw exposes customer secrets, Bell Canada blames an agentic hacker, and Anthropic lets Claude approve pull requests</a></h1>
+    <p class="lede">Microsoft confirmed that a flaw in Azure API Management Classic tiers was used to go after stored credentials, which Norwegian authorities tied to attacks on energy firms. Bell Canada and KEPCO disclosed breaches, and a vendor compromise reached Chase customers. In AI, Anthropic and OpenAI shipped agent tools aimed at code review and live patching, Nvidia reinstated Jensen Huang, and two states sued SpaceX over Grok.</p>
+    <p><a class="btn" href="posts/2026-11-24.html">Read today's briefing</a></p>
   </div>
 </section>
 <div class="wrap narrow">
 <section class="desk desk-cyber" aria-labelledby="h-cyber">
-  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">6 stories</span></h2>
+  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">5 stories</span></h2>
   <article class="item">
   <div class="item-num">01</div>
   <div class="item-body">
-    <h3>ScreenConnect campaigns breach MSPs and try to spread to technicians&#x27; workstations</h3>
-    <p>Huntress says attackers abused a blank-by-default access key in the third-party RMM+ extension (versions 1.0.31 and 1.0.32) to run commands through cloud-hosted ScreenConnect panels, compromising at least 6 MSPs and 288 hosts across 48 organizations within 90 minutes. They deployed rogue ScreenConnect clients and SCKit, a toolkit built to jump to a connecting technician&#x27;s machine through CVE-2026-84869 (CVSS 9.9). A separate wave is spraying MSP servers with that same flaw. ConnectWise disabled five RMM+ family extensions across about 400 partner environments.</p>
-    <p class="why"><strong>Why it matters</strong> One MSP technician session can reach dozens of customer networks. Update ScreenConnect host clients to 26.6.5 or later, disable the RMM+ extensions, review Run Command and Toolbox history, and avoid interactive sessions with endpoints you suspect are infected.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/hackers-deploy-malware-in-fresh-screenconnect-campaign/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html" rel="noopener" target="_blank">The Hacker News</a></p>
+    <h3>Azure API Management Classic flaw exploited to go after stored credentials</h3>
+    <p>Microsoft says it identified a security issue in the Developer, Basic, Standard and Premium tiers of Azure API Management Classic on November 18 and closed the access path on November 19. Instances not configured to its documented best practices could expose management functions, and an unauthorized party could have read secrets stored in named values, identity-provider and OpenID Connect client secrets, subscription keys and management API tokens. Norway&#x27;s National Security Authority linked the issue to activity affecting Equinor and Skagerak Energi. The Consumption tier and all v2 tiers were not affected.</p>
+    <p class="why"><strong>Why it matters</strong> If you run APIM Classic, assume stored secrets may be exposed. Rotate named values, client secrets and subscription keys, then review the instance against Microsoft&#x27;s hardening guidance.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://therecord.media/norway-microsoft-cyberattack-equinor" rel="noopener" target="_blank">The Record</a>, <a href="https://www.securityweek.com/azure-flaw-exploited-to-target-secrets-at-norwegian-energy-firms/" rel="noopener" target="_blank">SecurityWeek</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">02</div>
   <div class="item-body">
-    <h3>Attackers used GL.iNet&#x27;s cloud management service to infect routers and KVM devices</h3>
-    <p>GL.iNet confirmed that an intruder exploited a flaw in its GoodCloud remote-management service to install malware on some customers&#x27; routers and KVM devices, with users reporting root-level reverse shells and backdoors. The company has fixed the cloud flaw and released security firmware that it says removes the malware, but the cloud-side fix does not clean devices that were already infected.</p>
-    <p class="why"><strong>Why it matters</strong> A compromised KVM can give an attacker hands-on control of the servers plugged into it. Update the firmware, check attached machines, and treat VPN keys, admin passwords and SSH keys on affected devices as exposed.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html" rel="noopener" target="_blank">The Hacker News</a></p>
+    <h3>Bell Canada says an &#x27;agentic&#x27; threat actor stole enterprise customer data</h3>
+    <p>Bell Canada confirmed that an attacker it describes as agentic breached a pre-production environment of its Maximo system on November 17. That system is used to order and provision telecom circuits. Stolen data includes business contact details such as names, job titles, corporate emails and phone numbers. Bell says credentials, highly sensitive personal data and file attachments were not in the affected dataset.</p>
+    <p class="why"><strong>Why it matters</strong> Pre-production systems often hold real data with weaker controls. They need the same access controls and monitoring as production, especially as automated attackers sweep for easy targets.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/" rel="noopener" target="_blank">BleepingComputer</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">03</div>
   <div class="item-body">
-    <h3>Microsoft Entra Connect Health flaw exposed admin emails and tenant details</h3>
-    <p>Microsoft is notifying customers that attackers exploited a vulnerability in the Entra Connect Health API to read tenant metadata, including technical-contact and administrator email addresses, tenant IDs, license tiers and directory-sync status. Microsoft fixed the flaw on the service side on November 19 and says no passwords, tokens or valid keys were exposed, and that it found no unauthorized configuration changes.</p>
-    <p class="why"><strong>Why it matters</strong> Admin email lists plus tenant details are ideal material for targeted phishing aimed at your identity team. Warn admins, and confirm phishing-resistant MFA is enforced on privileged accounts.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-access-tenant-data/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.helpnetsecurity.com/2026/11/23/microsoft-entra-connect-health-vulnerability-tenant-data/" rel="noopener" target="_blank">Help Net Security</a></p>
+    <h3>South Korean utility KEPCO confirms a breach affecting about 1.5 million people</h3>
+    <p>Korea Electric Power Corporation detected unauthorized access on November 20 to its KEPCO ON billing portal and its supplier relationship management platform. The exposed data covers 650,487 customers, including card and bank account details; 426,827 company representatives; and 442,934 employees and partner staff. KEPCO blocked external access and suspended the affected services.</p>
+    <p class="why"><strong>Why it matters</strong> Utility billing portals combine identity and payment data at national scale. Expect targeted phishing against KEPCO customers and suppliers using the stolen details.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.securityweek.com/1-5-million-impacted-by-data-breach-at-south-korean-electric-company-kepco/" rel="noopener" target="_blank">SecurityWeek</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">04</div>
   <div class="item-body">
-    <h3>Exploited flaw in legacy ASP.NET library Idunno.AntiCsrf allows one-request takeover</h3>
-    <p>CVE-2026-131914 (CVSS 9.3) in Idunno.AntiCsrf 0.9.1.0 and 0.9.1 Beta lets an unauthenticated attacker send a single HTTP POST with a serialized .NET payload and run code as the IIS worker process. Mandiant reports active exploitation, and researchers are urging teams to stop using the library.</p>
-    <p class="why"><strong>Why it matters</strong> Old WebForms apps often carry forgotten third-party modules. Search build artifacts and servers for Idunno.AntiCsrf.dll and remove or replace it.</p>
-    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html" rel="noopener" target="_blank">The Hacker News</a></p>
+    <h3>Vendor breach linked to Qubole exposes Chase, Visa and Mastercard data</h3>
+    <p>J.P. Morgan Chase disclosed that a cyberattack at a third-party provider exposed marketing data that may include customer names and email addresses. Mastercard confirmed a limited exposure of cardholder email addresses. The n0n ransomware group claimed an attack on Qubole, a cloud data analytics vendor, and allegedly used stolen Qubole credentials between October 14 and 26 to reach customers&#x27; AWS environments through IAM roles granted to the vendor. Visa says its systems and payment data were not affected.</p>
+    <p class="why"><strong>Why it matters</strong> Cross-account IAM roles granted to vendors are standing access into your cloud. Review every third-party trust policy, scope it tightly, and alert on unusual use of those roles.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/" rel="noopener" target="_blank">BleepingComputer</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">05</div>
   <div class="item-body">
-    <h3>Ghostscript bug turns ordinary file uploads into server compromise</h3>
-    <p>Security firm pwn.ai showed that CVE-2026-125396, a use-after-free in Ghostscript&#x27;s font loading, can switch off its -dSAFER sandbox. Through upload, preview and print features in about ten applications, including Roundcube, WordPress plugins and Linux print queues, a crafted file ran commands on the server, sometimes with no login. Artifex fixed it in Ghostscript 10.08.0 in September, and no in-the-wild attacks have been reported.</p>
-    <p class="why"><strong>Why it matters</strong> Libraries such as ImageMagick and Pillow can hand files to Ghostscript even when they are named .png or .pdf. Confirm 10.08.0 or later on any server that processes uploads.</p>
-    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html" rel="noopener" target="_blank">The Hacker News</a></p>
-  </div>
-</article><article class="item">
-  <div class="item-num">06</div>
-  <div class="item-body">
-    <h3>FBI investigates an apparent breach of its national crime database</h3>
-    <p>The FBI is investigating an apparent intrusion into the National Crime Information Center, the database federal, state and local police use to share records on fugitives, missing persons and criminal histories, according to people briefed on the matter. It is reportedly the second FBI breach in about two months, and it is not yet clear how attackers got in or what was taken.</p>
-    <p class="why"><strong>Why it matters</strong> NCIC connects thousands of agencies, so any confirmed access raises questions about the integrity of records officers rely on during stops and investigations.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/fbi-reportedly-hacked-again-this-time-targeting-nationwide-police-database/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.nbcnews.com/politics/justice-department/fbi-investigating-potential-breach-crime-database-rcna610536" rel="noopener" target="_blank">NBC News</a>, <a href="https://www.securityweek.com/fbi-investigating-apparent-hack-of-its-key-national-criminal-justice-database-ap-source-says/" rel="noopener" target="_blank">SecurityWeek</a></p>
+    <h3>CISA adds N-able Mail Assure SSRF flaw to the KEV catalog</h3>
+    <p>On November 23 CISA added CVE-2026-134624, a server-side request forgery flaw in N-able Mail Assure (SpamExperts), to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation. The same update added a MONAI Label path traversal flaw, CVE-2026-133968.</p>
+    <p class="why"><strong>Why it matters</strong> Email security gateways sit on the perimeter and can reach internal services, which is exactly what SSRF abuses. Patch or apply vendor mitigations and check for unexpected outbound requests from the appliance.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.cisa.gov/news-events/alerts/2026/11/23/cisa-adds-two-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA</a></p>
   </div>
 </article>
 </section>
@@ -99,48 +91,52 @@
   <article class="item">
   <div class="item-num">01</div>
   <div class="item-body">
-    <h3>OpenRouter drops three providers and pulls 125 endpoints from Zero Data Retention</h3>
-    <p>Following Dragos research showing attackers had been stealing prompts from inside three AI inference providers since mid-July, OpenRouter removed three providers, revoked Zero Data Retention eligibility for 125 endpoints and notified potentially affected customers. It says its own systems were not breached and that it is turning the researchers&#x27; canary testing into an ongoing check.</p>
-    <p class="why"><strong>Why it matters</strong> Routers and gateways can&#x27;t vouch for every provider behind them. If you use one, pin specific upstream providers and assume anything sent through a shared pool may be logged.</p>
-    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html" rel="noopener" target="_blank">The Hacker News</a></p>
+    <h3>Anthropic&#x27;s Claude Ship adds agents that fix and approve pull requests</h3>
+    <p>Anthropic launched Claude Ship for Team and Enterprise customers with GitHub repositories. It pairs the generally available Code Review with two beta agents: PR Steward, which addresses failing CI checks, merge conflicts and review feedback, and Claude Approvals, which can approve routine changes when a team&#x27;s policy file allows it and route riskier ones to a human.</p>
+    <p class="why"><strong>Why it matters</strong> Auto-approval moves trust from reviewers to the approval policy. Keep that policy under version control and owner review, and keep required human review on security-sensitive paths.</p>
+    <p class="sources"><span>Sources</span> <a href="https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/" rel="noopener" target="_blank">TechCrunch</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests" rel="noopener" target="_blank">The Verge</a>, <a href="https://www.helpnetsecurity.com/2026/11/24/anthropic-claude-ship-beta/" rel="noopener" target="_blank">Help Net Security</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">02</div>
   <div class="item-body">
-    <h3>OpenAI&#x27;s chief scientist proposes shared industry limits on AI capability</h3>
-    <p>Jakub Pachocki argued that perplexity, a measure of how well a model predicts text, should serve as a common yardstick for AI progress across labs. He proposed limits that developers would agree not to cross until tools to understand and monitor AI behavior reach concrete milestones, and said AI could speed up training research as soon as 2027. Sam Altman called the post the most important thing OpenAI has published in a while.</p>
-    <p class="why"><strong>Why it matters</strong> A measurable, cross-lab threshold would give regulators and governance teams something concrete to audit, though it depends on competitors agreeing to it.</p>
-    <p class="sources"><span>Sources</span> <a href="https://openai.com/index/perplexity-and-intelligence/" rel="noopener" target="_blank">OpenAI</a>, <a href="https://www.reuters.com/business/openai-scientist-proposes-industry-ai-limits-tied-model-intelligence-metric-2026-11-22/" rel="noopener" target="_blank">Reuters</a>, <a href="https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/" rel="noopener" target="_blank">TechCrunch</a></p>
+    <h3>OpenAI and Cisco release Shirudo, open-source eBPF &#x27;shields&#x27; for unpatched Linux systems</h3>
+    <p>OpenAI and Cisco released Shirudo, an open-source runtime that puts temporary eBPF-based protections in front of vulnerable code paths on running Linux systems while teams roll out patches. Shields can be generated by an AI agent, tested against exploits and real traffic, and deployed after operator approval without restarts. In a controlled test, a Codex-generated shield blocked an exploit attempt against a running Elasticsearch service. Production use requires Shirudo&#x27;s kernel patches and a TPM 2.0 chip.</p>
+    <p class="why"><strong>Why it matters</strong> With AI speeding up bug discovery and rushed patching causing outages, virtual patching gives teams a way to buy time. Evaluate it in a lab before trusting it on critical hosts.</p>
+    <p class="sources"><span>Sources</span> <a href="http://openai.com/index/introducing-shirudo/" rel="noopener" target="_blank">OpenAI</a>, <a href="https://www.helpnetsecurity.com/2026/11/24/cisco-openai-shirudo/" rel="noopener" target="_blank">Help Net Security</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">03</div>
   <div class="item-body">
-    <h3>METR: the length of tasks AI agents can finish is doubling about every 3.6 months</h3>
-    <p>In its latest capability update, the evaluation group METR found that the time horizons of frontier models on its task suites are doubling roughly every 3.6 months, and warned that its own measures are getting harder to keep ahead of the models.</p>
-    <p class="why"><strong>Why it matters</strong> Agents that can carry longer tasks end to end change both offense and defense. Threat models and automation plans built on last year&#x27;s capabilities are already out of date.</p>
-    <p class="sources"><span>Sources</span> <a href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" rel="noopener" target="_blank">METR</a></p>
+    <h3>Nvidia reinstates Jensen Huang as CEO after White House input</h3>
+    <p>Nvidia&#x27;s board voted unanimously on Monday to reinstate Jensen Huang as CEO, president and director, less than a week after saying it did not intend to. The board said it received input from senior levels of the US government and concluded his return poses no national security risk. President Trump took credit for the reversal, Nvidia shares surged, and lawmakers from both parties criticized the decision and called for tighter chip export rules.</p>
+    <p class="why"><strong>Why it matters</strong> Nvidia supplies most of the world&#x27;s AI compute, so its governance and its export-control exposure affect hardware supply and pricing for everyone building on AI.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/technology/nvidia-reinstates-jensen-huang-ceo-2026-11-23/" rel="noopener" target="_blank">Reuters</a>, <a href="https://www.theverge.com/tech/1039937/nvidia-ceo-jensen-huang-reinstated" rel="noopener" target="_blank">The Verge</a>, <a href="https://www.reuters.com/business/lawmakers-criticize-nvidia-decision-reinstate-huang-ceo-2026-11-23/" rel="noopener" target="_blank">Reuters</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">04</div>
   <div class="item-body">
-    <h3>US intelligence chief says expect more outages as systems are patched for AI-found flaws</h3>
-    <p>Director of National Intelligence Jay Clayton said on Sunday that Americans should expect more technology glitches and interruptions as organizations upgrade aging systems, repeating that recent outages were not coordinated or state-sponsored attacks. Officials have tied some disruptions, including an NSA network outage, to rushed patching of a PHP flaw found with AI help.</p>
-    <p class="why"><strong>Why it matters</strong> AI is speeding up bug discovery faster than many organizations can safely test fixes. Staged rollouts, rollback plans and change windows matter more now, not less.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/business/finance/us-intelligence-chief-predicts-more-tech-outages-systems-undergo-upgrades-2026-11-22/" rel="noopener" target="_blank">Reuters</a>, <a href="http://apnews.com/article/tech-outage-ai-security-patch-0c0f0cf4983a0f81ba88c4c4d2b8383f" rel="noopener" target="_blank">AP News</a></p>
+    <h3>Virginia and Oregon become the first states to sue SpaceX over Grok sexual imagery</h3>
+    <p>The attorneys general of Virginia and Oregon filed separate consumer-protection lawsuits against SpaceX, X and SpaceX Super Intelligence. They allege the companies misled users about safeguards while Grok&#x27;s image tools generated non-consensual intimate imagery and child sexual abuse material. The suits seek damages, civil penalties and injunctions. SpaceXSI said such content is abhorrent and that it has worked to curb it.</p>
+    <p class="why"><strong>Why it matters</strong> States are using existing consumer-protection law against AI safety claims. Any public statement about model safeguards is now a potential liability if the controls don&#x27;t hold up.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/legal/government/virginia-oregon-sue-musks-spacex-over-grok-ais-creation-child-sexual-abuse-2026-11-23/" rel="noopener" target="_blank">Reuters</a>, <a href="https://apnews.com/article/grok-lawsuit-elon-musk-ai-abuse-images-452cc64e7169a55868f797982d0e8238" rel="noopener" target="_blank">AP News</a>, <a href="https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/" rel="noopener" target="_blank">Ars Technica</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">05</div>
   <div class="item-body">
-    <h3>Governors call for federal rules on frontier AI while keeping state authority</h3>
-    <p>The National Governors Association released bipartisan principles asking Washington to handle national risks from the most powerful AI systems, including independent safety reviews and mandatory reporting of serious security and safety incidents, while states keep authority over consumer protection, discrimination and AI&#x27;s effects on jobs. The plan also urges states to harden their own systems against AI-enabled cyber threats.</p>
-    <p class="why"><strong>Why it matters</strong> Incident-reporting duties for AI developers are moving from proposal toward expectation. Governance programs should start tracking AI security incidents with the same discipline as data breaches.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.nga.org/news/press-releases/governors-call-for-ai-action/" rel="noopener" target="_blank">National Governors Association</a>, <a href="https://www.bloomberg.com/news/articles/2026-11-22/governors-call-for-federal-ai-rules-without-sidelining-states" rel="noopener" target="_blank">Bloomberg</a></p>
+    <h3>Australia makes AI a core foreign-policy challenge</h3>
+    <p>Australia said it will treat artificial intelligence as a key foreign-policy challenge, warning that it gives foreign actors new ways to interfere in democracy. The move follows the government&#x27;s plan earlier this month to require frontier AI companies to report breaches and to set up a dedicated AI regulator, after an OpenAI agent breached a national health system database.</p>
+    <p class="why"><strong>Why it matters</strong> Mandatory breach reporting for AI companies is spreading internationally. Teams deploying agents in regulated sectors should plan for incident disclosure duties.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/world/asia-pacific/australia-treat-ai-key-foreign-policy-challenge-2026-11-23/" rel="noopener" target="_blank">Reuters</a></p>
   </div>
 </article>
 </section>
-<aside class="takeaway"><h2>The takeaway</h2><p>This week&#x27;s intrusions went through management planes: remote-support panels, cloud device managers and identity monitoring APIs. Inventory every tool that can push commands or read tenant data, patch and lock it down first, and plan patch rollouts that can absorb the faster pace AI-driven bug discovery now demands.</p></aside>
+<aside class="takeaway"><h2>The takeaway</h2><p>Today&#x27;s breaches ran through stored secrets and trusted access: API gateway credentials, vendor IAM roles and lightly protected pre-production systems. Inventory where secrets and standing third-party access live, rotate what may be exposed, and treat AI agents that approve code or deploy shields as privileged identities with clear policies and audit trails.</p></aside>
 </div>
 <section class="recent"><div class="wrap"><h2 class="section-title">Recent briefings</h2><div class="grid"><article class="card">
+  <p class="kicker"><time datetime="2026-11-23">Monday, November 23, 2026</time></p>
+  <h3><a href="posts/2026-11-23.html">ScreenConnect attacks hit MSPs, GL.iNet&#x27;s cloud is used to plant router malware, and OpenAI proposes a speed limit for AI</a></h3>
+  <ul><li>ScreenConnect campaigns breach MSPs and try to spread to technicians&#x27; workstations</li><li>Attackers used GL.iNet&#x27;s cloud management service to infect routers and KVM devices</li><li>OpenRouter drops three providers and pulls 125 endpoints from Zero Data Retention</li><li>OpenAI&#x27;s chief scientist proposes shared industry limits on AI capability</li></ul>
+</article><article class="card">
   <p class="kicker"><time datetime="2026-11-22">Sunday, November 22, 2026</time></p>
   <h3><a href="posts/2026-11-22.html">A vCenter zero-day, AI agents that hack on their own, and a brutal week for AI stocks</a></h3>
   <ul><li>China-linked Armory Castle exploited a VMware vCenter zero-day for two months before the patch</li><li>Amazon: an attacker&#x27;s autonomous AI agents found and exploited a zero-day in 11 minutes</li><li>Two million canary secrets show the AI inference supply chain is leaking prompts</li><li>Signal blocks screenshots by default to keep OS-level AI agents out of chats</li></ul>
