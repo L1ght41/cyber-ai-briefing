@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIA and FinCEN systems breached, Drupal&#x27;s Fail2Install flaw is under attack, and the UK warns that AI agents are exploiting old weaknesses | Signal &amp; Shield</title>
+<meta name="description" content="An unclassified CIA system and part of Treasury&#x27;s FinCEN were breached on the same day. Attackers are exploiting a critical Drupal installer flaw, and a campaign GreyNoise suspects is AI-assisted has compromised Check Point management servers. On the AI side, Britain&#x27;s NCSC and its financial regulator both issued warnings about agents, a new benchmark shows how often personal agents still fail, and Anthropic&#x27;s stock slipped below its IPO price.">
+<link rel="canonical" href="https://l1ght41.github.io/cyber-ai-briefing/posts/2026-11-25.html">
+<meta property="og:title" content="CIA and FinCEN systems breached, Drupal&#x27;s Fail2Install flaw is under attack, and the UK warns that AI agents are exploiting old weaknesses | Signal &amp; Shield">
+<meta property="og:description" content="An unclassified CIA system and part of Treasury&#x27;s FinCEN were breached on the same day. Attackers are exploiting a critical Drupal installer flaw, and a campaign GreyNoise suspects is AI-assisted has compromised Check Point management servers. On the AI side, Britain&#x27;s NCSC and its financial regulator both issued warnings about agents, a new benchmark shows how often personal agents still fail, and Anthropic&#x27;s stock slipped below its IPO price.">
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" title="Signal & Shield" href="../feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181d'/%3E%3Cpath d='M16 6l8 3v6c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V9z' fill='none' stroke='%23e8590c' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap masthead-row">
+    <a class="brand" href="../index.html" aria-label="Signal & Shield home">
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M16 4l10 3.6v7.2c0 6-4.2 10.6-10 13.2C10.2 25.4 6 20.8 6 14.8V7.6z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M11 16h3l2-4 2 8 2-4h1" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Signal & Shield</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../index.html">Briefings</a>
+      <a href="../archive.html">Archive</a>
+      <a href="../about.html">About</a>
+      <a class="nav-cta" href="https://simon-boadi-cybersecurity.pplx.app">Portfolio</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap narrow">
+<p class="kicker">Daily briefing &middot; <time datetime="2026-11-25">Wednesday, November 25, 2026</time></p>
+<h1 class="post-title">CIA and FinCEN systems breached, Drupal&#x27;s Fail2Install flaw is under attack, and the UK warns that AI agents are exploiting old weaknesses</h1>
+<p class="lede">An unclassified CIA system and part of Treasury&#x27;s FinCEN were breached on the same day. Attackers are exploiting a critical Drupal installer flaw, and a campaign GreyNoise suspects is AI-assisted has compromised Check Point management servers. On the AI side, Britain&#x27;s NCSC and its financial regulator both issued warnings about agents, a new benchmark shows how often personal agents still fail, and Anthropic&#x27;s stock slipped below its IPO price.</p>
+<section class="desk desk-cyber" aria-labelledby="h-cyber">
+  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">5 stories</span></h2>
+  <article class="item">
+  <div class="item-num">01</div>
+  <div class="item-body">
+    <h3>Unclassified CIA system breached as FinCEN takes systems offline after an intrusion</h3>
+    <p>A person familiar with the incident told AP that attackers breached an unclassified CIA system that handles open-source intelligence. The person said no classified data was involved and the issue has been resolved. Hours later, Treasury&#x27;s Financial Crimes Enforcement Network said unauthorized access hit a limited subset of its systems and took some offline, directing banks to its hotline for filings. The Record notes reports that the CIA intruders used Artex, a Chinese-made framework that automates intrusion steps with large language models.</p>
+    <p class="why"><strong>Why it matters</strong> Several federal breaches in one week, some reportedly automated with AI, put pressure on agencies and their contractors to verify access logs and segment unclassified analytic systems.</p>
+    <p class="sources"><span>Sources</span> <a href="https://apnews.com/article/bfa6d3b02e3b0e2779dfb613c900bd77" rel="noopener" target="_blank">AP News</a>, <a href="https://therecord.media/treasury-fincen-takes-systems-offline-after-cyber-incident" rel="noopener" target="_blank">The Record</a>, <a href="https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/" rel="noopener" target="_blank">BleepingComputer</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">02</div>
+  <div class="item-body">
+    <h3>Drupal &#x27;Fail2Install&#x27; flaw exploited to hijack sites; CISA sets a November 27 deadline</h3>
+    <p>CVE-2026-132165 (CVSS 9.8) lets an unauthenticated attacker use Drupal core&#x27;s install.php to try to reinstall a site under certain conditions, which can lead to site takeover or remote code execution. Anthropic&#x27;s OSS Scanner found the bug. The Drupal Security Team says it was exploited on live sites from November 19, and CISA added it to the KEV catalog with a November 27 deadline for federal agencies.</p>
+    <p class="why"><strong>Why it matters</strong> Apply the Drupal core update now, and block or remove web access to /core/install.php on production sites as defense in depth.</p>
+    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html" rel="noopener" target="_blank">The Hacker News</a>, <a href="https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/" rel="noopener" target="_blank">BleepingComputer</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">03</div>
+  <div class="item-body">
+    <h3>Suspected AI-assisted campaign compromises Check Point management servers at 22 organizations</h3>
+    <p>GreyNoise says an actor it tracks as GT13 has compromised about two dozen Check Point Security Management servers across 22 organizations in finance, energy, government and other sectors since early October, operating from 99 IP addresses. After gaining access, the actor used CVE-2026-16232, a SmartConsole authentication bypass disclosed in July, to run management tasks with admin rights. GreyNoise believes agentic tooling automated the scanning and exploitation, but says AI use is not confirmed.</p>
+    <p class="why"><strong>Why it matters</strong> Firewall management servers control every gateway they manage. Confirm the July fix is applied, restrict management interfaces to admin networks, and audit recent policy and task changes.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/check-point-security-management-servers-hacked-in-ai-assisted-campaign/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/" rel="noopener" target="_blank">BleepingComputer</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">04</div>
+  <div class="item-body">
+    <h3>Radware breach exposed customers&#x27; log-export cloud credentials through an unauthenticated internal API</h3>
+    <p>Radware says that on November 19 an unauthorized party reached an internal-only Cloud WAF management API that was exposed to the internet without authentication. Customer contact details were accessed, and for some customers so were the credentials configured for log export to AWS S3, Azure Blob Storage or SFTP. Radware says WAF inspection, certificates and application traffic were not affected.</p>
+    <p class="why"><strong>Why it matters</strong> Affected AppSec customers should rotate S3 keys, Azure SAS tokens and SFTP credentials used for log export and check storage access logs back to November 19.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/" rel="noopener" target="_blank">BleepingComputer</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">05</div>
+  <div class="item-body">
+    <h3>WordPress pulls six WP Connect plugins after a developer-account compromise</h3>
+    <p>WordPress removed six plugins from developer WP Connect after they were backdoored on November 22 to allow arbitrary code execution, following a suspected compromise of the developer&#x27;s account. Attackers could use the backdoor to plant web shells and cron hooks that persist even after the plugin is removed.</p>
+    <p class="why"><strong>Why it matters</strong> If you run any WP Connect plugin, removing it is not enough. Check for unfamiliar admin users, web shells and scheduled tasks, and rotate credentials.</p>
+    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/wordpress-blocks-six-backdoored-wp.html" rel="noopener" target="_blank">The Hacker News</a></p>
+  </div>
+</article>
+</section>
+<section class="desk desk-ai" aria-labelledby="h-ai">
+  <h2 id="h-ai"><span class="tag tag-ai">AI & Tech</span><span class="count">4 stories</span></h2>
+  <article class="item">
+  <div class="item-num">01</div>
+  <div class="item-body">
+    <h3>UK&#x27;s NCSC reports a &#x27;marked rise&#x27; in attacks using agentic offensive frameworks</h3>
+    <p>Britain&#x27;s National Cyber Security Centre says it has seen a marked rise since September in attacks using agentic offensive frameworks, red-team tools that let AI models drive off-the-shelf hacking utilities. It says these agents mostly exploit long-tolerated weaknesses rather than novel bugs: credentials committed to repositories, infrastructure-as-code misconfigurations, default or missing authentication, and weak APIs. Once inside, they take advantage of over-privileged accounts and flat networks.</p>
+    <p class="why"><strong>Why it matters</strong> This is a checklist, not a new threat class. Scan repos for secrets, enforce authentication on every API, cut standing privileges and segment networks before an automated attacker finds the gaps.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks" rel="noopener" target="_blank">NCSC</a>, <a href="https://therecord.media/cyberattacks-uk-artificial-intelligence" rel="noopener" target="_blank">The Record</a>, <a href="https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/" rel="noopener" target="_blank">TechCrunch</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">02</div>
+  <div class="item-body">
+    <h3>UK financial regulator warns AI agent providers as Meta launches Muse in Britain</h3>
+    <p>The Financial Conduct Authority warned tech and social media firms that AI agents offering financial services can fall under its rules, and that calling yourself a technology provider is no exemption if a product includes advice, promotions or payments. The warning coincided with Meta&#x27;s UK launch of its Muse agent, which can renew insurance, chase refunds and make purchases but will not initially access bank account data or give personalized financial guidance.</p>
+    <p class="why"><strong>Why it matters</strong> Agent builders entering regulated domains need licensing and compliance reviews early, not after launch.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/business/finance/ai-agents-could-trigger-financial-regulation-tech-firms-uk-watchdog-says-2026-11-24/" rel="noopener" target="_blank">Reuters</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">03</div>
+  <div class="item-body">
+    <h3>ShellBench: top personal AI agents fail more than a third of everyday tasks</h3>
+    <p>ShellBench, a benchmark built by researchers including Hugging Face, Red Hat and UC Berkeley from more than 10 million real agent interactions, found that the most advanced models from OpenAI, Anthropic and Meta failed more than a third of the time. Across all models, 15.7 percent of attempts broke at least one safety requirement. In one task, agents failed to withhold a sensitive bank upload token 18.6 percent of the time.</p>
+    <p class="why"><strong>Why it matters</strong> Agents that read mail, files and receipts still leak secrets and make costly mistakes. Keep humans in the loop for payments and keep credentials out of agent-readable workspaces.</p>
+    <p class="sources"><span>Sources</span> <a href="https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/" rel="noopener" target="_blank">TechCrunch</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">04</div>
+  <div class="item-body">
+    <h3>Anthropic stock falls below its $83 IPO price</h3>
+    <p>Anthropic shares fell below their $83 IPO price on Tuesday, trading as low as about $76, less than a week after a record Nasdaq debut that opened at $111.50 and briefly valued the company above $2 trillion. Reuters and TechCrunch say the slide adds to concerns about AI valuations and could pressure private AI startup funding.</p>
+    <p class="why"><strong>Why it matters</strong> Investors are now judging frontier labs as public companies. Cost pressure there can reach API pricing, rate limits and vendor roadmaps that builders depend on.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/business/anthropic-breaks-below-83-ipo-price-debut-rally-unravels-2026-11-24/" rel="noopener" target="_blank">Reuters</a>, <a href="https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/" rel="noopener" target="_blank">TechCrunch</a></p>
+  </div>
+</article>
+</section>
+<aside class="takeaway"><h2>The takeaway</h2><p>Most of today&#x27;s incidents came from preventable gaps: an exposed internal API, a reachable installer, unpatched management servers and a hijacked developer account. Automated, AI-driven attackers find these faster than people do, so lock down management planes, remove unused entry points and treat authentication on every API as non-negotiable.</p></aside>
+<nav class="post-nav" aria-label="Briefing navigation"><a class="older" href="2026-11-24.html">Older: Tuesday, November 24, 2026 &rarr;</a></nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <p>Signal & Shield &middot; A daily briefing on cybersecurity and AI, by Simon Boadi.</p>
+    <p><a href="https://simon-boadi-cybersecurity.pplx.app">Portfolio</a> &middot; <a href="../feed.xml">RSS</a> &middot; Summaries link to original reporting; read the sources for full detail.</p>
+  </div>
+</footer>
+</body>
+</html>

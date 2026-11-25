@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-25",
+  "title": "CIA and FinCEN systems breached, Drupal's Fail2Install flaw is under attack, and the UK warns that AI agents are exploiting old weaknesses",
+  "summary": "An unclassified CIA system and part of Treasury's FinCEN were breached on the same day. Attackers are exploiting a critical Drupal installer flaw, and a campaign GreyNoise suspects is AI-assisted has compromised Check Point management servers. On the AI side, Britain's NCSC and its financial regulator both issued warnings about agents, a new benchmark shows how often personal agents still fail, and Anthropic's stock slipped below its IPO price.",
+  "sections": [
+    {
+      "key": "cyber",
+      "items": [
+        {
+          "headline": "Unclassified CIA system breached as FinCEN takes systems offline after an intrusion",
+          "body": "A person familiar with the incident told AP that attackers breached an unclassified CIA system that handles open-source intelligence. The person said no classified data was involved and the issue has been resolved. Hours later, Treasury's Financial Crimes Enforcement Network said unauthorized access hit a limited subset of its systems and took some offline, directing banks to its hotline for filings. The Record notes reports that the CIA intruders used Artex, a Chinese-made framework that automates intrusion steps with large language models.",
+          "why": "Several federal breaches in one week, some reportedly automated with AI, put pressure on agencies and their contractors to verify access logs and segment unclassified analytic systems.",
+          "sources": [
+            {"name": "AP News", "url": "https://apnews.com/article/bfa6d3b02e3b0e2779dfb613c900bd77"},
+            {"name": "The Record", "url": "https://therecord.media/treasury-fincen-takes-systems-offline-after-cyber-incident"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-reportedly-breached-cia-intelligence-analysis-system/"}
+          ]
+        },
+        {
+          "headline": "Drupal 'Fail2Install' flaw exploited to hijack sites; CISA sets a November 27 deadline",
+          "body": "CVE-2026-132165 (CVSS 9.8) lets an unauthenticated attacker use Drupal core's install.php to try to reinstall a site under certain conditions, which can lead to site takeover or remote code execution. Anthropic's OSS Scanner found the bug. The Drupal Security Team says it was exploited on live sites from November 19, and CISA added it to the KEV catalog with a November 27 deadline for federal agencies.",
+          "why": "Apply the Drupal core update now, and block or remove web access to /core/install.php on production sites as defense in depth.",
+          "sources": [
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/drupal-fail2install-exploit-details.html"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/"}
+          ]
+        },
+        {
+          "headline": "Suspected AI-assisted campaign compromises Check Point management servers at 22 organizations",
+          "body": "GreyNoise says an actor it tracks as GT13 has compromised about two dozen Check Point Security Management servers across 22 organizations in finance, energy, government and other sectors since early October, operating from 99 IP addresses. After gaining access, the actor used CVE-2026-16232, a SmartConsole authentication bypass disclosed in July, to run management tasks with admin rights. GreyNoise believes agentic tooling automated the scanning and exploitation, but says AI use is not confirmed.",
+          "why": "Firewall management servers control every gateway they manage. Confirm the July fix is applied, restrict management interfaces to admin networks, and audit recent policy and task changes.",
+          "sources": [
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/check-point-security-management-servers-hacked-in-ai-assisted-campaign/"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/"}
+          ]
+        },
+        {
+          "headline": "Radware breach exposed customers' log-export cloud credentials through an unauthenticated internal API",
+          "body": "Radware says that on November 19 an unauthorized party reached an internal-only Cloud WAF management API that was exposed to the internet without authentication. Customer contact details were accessed, and for some customers so were the credentials configured for log export to AWS S3, Azure Blob Storage or SFTP. Radware says WAF inspection, certificates and application traffic were not affected.",
+          "why": "Affected AppSec customers should rotate S3 keys, Azure SAS tokens and SFTP credentials used for log export and check storage access logs back to November 19.",
+          "sources": [
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"}
+          ]
+        },
+        {
+          "headline": "WordPress pulls six WP Connect plugins after a developer-account compromise",
+          "body": "WordPress removed six plugins from developer WP Connect after they were backdoored on November 22 to allow arbitrary code execution, following a suspected compromise of the developer's account. Attackers could use the backdoor to plant web shells and cron hooks that persist even after the plugin is removed.",
+          "why": "If you run any WP Connect plugin, removing it is not enough. Check for unfamiliar admin users, web shells and scheduled tasks, and rotate credentials.",
+          "sources": [
+            {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/wordpress-blocks-six-backdoored-wp.html"}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "items": [
+        {
+          "headline": "UK's NCSC reports a 'marked rise' in attacks using agentic offensive frameworks",
+          "body": "Britain's National Cyber Security Centre says it has seen a marked rise since September in attacks using agentic offensive frameworks, red-team tools that let AI models drive off-the-shelf hacking utilities. It says these agents mostly exploit long-tolerated weaknesses rather than novel bugs: credentials committed to repositories, infrastructure-as-code misconfigurations, default or missing authentication, and weak APIs. Once inside, they take advantage of over-privileged accounts and flat networks.",
+          "why": "This is a checklist, not a new threat class. Scan repos for secrets, enforce authentication on every API, cut standing privileges and segment networks before an automated attacker finds the gaps.",
+          "sources": [
+            {"name": "NCSC", "url": "https://www.ncsc.gov.uk/blogs/familiar-weaknesses-exploited-faster-defending-against-agentic-cyber-attacks"},
+            {"name": "The Record", "url": "https://therecord.media/cyberattacks-uk-artificial-intelligence"},
+            {"name": "TechCrunch", "url": "https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/"}
+          ]
+        },
+        {
+          "headline": "UK financial regulator warns AI agent providers as Meta launches Muse in Britain",
+          "body": "The Financial Conduct Authority warned tech and social media firms that AI agents offering financial services can fall under its rules, and that calling yourself a technology provider is no exemption if a product includes advice, promotions or payments. The warning coincided with Meta's UK launch of its Muse agent, which can renew insurance, chase refunds and make purchases but will not initially access bank account data or give personalized financial guidance.",
+          "why": "Agent builders entering regulated domains need licensing and compliance reviews early, not after launch.",
+          "sources": [
+            {"name": "Reuters", "url": "https://www.reuters.com/business/finance/ai-agents-could-trigger-financial-regulation-tech-firms-uk-watchdog-says-2026-11-24/"}
+          ]
+        },
+        {
+          "headline": "ShellBench: top personal AI agents fail more than a third of everyday tasks",
+          "body": "ShellBench, a benchmark built by researchers including Hugging Face, Red Hat and UC Berkeley from more than 10 million real agent interactions, found that the most advanced models from OpenAI, Anthropic and Meta failed more than a third of the time. Across all models, 15.7 percent of attempts broke at least one safety requirement. In one task, agents failed to withhold a sensitive bank upload token 18.6 percent of the time.",
+          "why": "Agents that read mail, files and receipts still leak secrets and make costly mistakes. Keep humans in the loop for payments and keep credentials out of agent-readable workspaces.",
+          "sources": [
+            {"name": "TechCrunch", "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/"}
+          ]
+        },
+        {
+          "headline": "Anthropic stock falls below its $83 IPO price",
+          "body": "Anthropic shares fell below their $83 IPO price on Tuesday, trading as low as about $76, less than a week after a record Nasdaq debut that opened at $111.50 and briefly valued the company above $2 trillion. Reuters and TechCrunch say the slide adds to concerns about AI valuations and could pressure private AI startup funding.",
+          "why": "Investors are now judging frontier labs as public companies. Cost pressure there can reach API pricing, rate limits and vendor roadmaps that builders depend on.",
+          "sources": [
+            {"name": "Reuters", "url": "https://www.reuters.com/business/anthropic-breaks-below-83-ipo-price-debut-rally-unravels-2026-11-24/"},
+            {"name": "TechCrunch", "url": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/"}
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaway": "Most of today's incidents came from preventable gaps: an exposed internal API, a reachable installer, unpatched management servers and a hijacked developer account. Automated, AI-driven attackers find these faster than people do, so lock down management planes, remove unused entry points and treat authentication on every API as non-negotiable."
+}
