@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-27",
+  "title": "Drupal's installer patch leaves a second exploited gap, Microsoft says Salt Typhoon has adopted ARTEX, and Google sets new rules for AI agents in Workspace",
+  "summary": "Drupal disclosed a second exploited installer flaw that can still lead to site takeover on some patched sites. Microsoft named six state and criminal groups using the ARTEX AI attack framework, a North Korea-linked campaign poisoned thousands of GitHub repositories, and Flight Centre reported a third-party breach. On the AI side, Google will require agents to reach Workspace data through its MCP servers or CLI, the UK's financial regulator said Meta declined to test Muse jointly, Nvidia paused server shipments to four Southeast Asian countries, and OpenAI began piloting Private Inference.",
+  "sections": [
+    {
+      "key": "cyber",
+      "items": [
+        {
+          "headline": "Drupal warns a second installer flaw is being exploited after last week's fix",
+          "body": "Drupal advisory SA-CORE-2026-019 (CVE-2026-136716, rated highly critical, 21 of 25) says some sites in unusual or incomplete install states could still be taken over through install.php after the earlier SA-CORE-2026-017 fix. That includes production sites. Drupal says the flaw is being exploited in the wild and the vulnerable state is not visible in the interface. Fixed releases are 10.6.23, 11.3.23 and 11.4.14.",
+          "why": "If you patched last week but left the installer reachable, update again, check the user 1 account's email and recent activity, and consider resetting its password. Block web access to install.php.",
+          "sources": [
+            {
+              "name": "Drupal.org",
+              "url": "https://www.drupal.org/sa-core-2026-019"
+            },
+            {
+              "name": "BleepingComputer",
+              "url": "https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/"
+            },
+            {
+              "name": "SecurityWeek",
+              "url": "https://www.securityweek.com/drupal-installer-patch-left-a-gap-attackers-are-already-exploiting/"
+            }
+          ]
+        },
+        {
+          "headline": "Microsoft names Salt Typhoon and North Korean groups among ARTEX users",
+          "body": "Microsoft Threat Intelligence says six actors have added the ARTEX AI penetration-testing framework to their tooling: Storm-0940, Storm-3358, Onyx Sleet, Pearl Sleet, Crystal Typhoon and Salt Typhoon. It says they use it to speed up reconnaissance, credential attacks and web-application exploitation. ARTEX was published on GitHub in July and pulled in October, but forks remain available. Microsoft did not give campaign details for Salt Typhoon.",
+          "why": "ARTEX automates known techniques at machine speed, so credential hygiene, a smaller internet-facing footprint and fast patching are still the controls that matter. Microsoft has published Defender detections and hunting guidance.",
+          "sources": [
+            {
+              "name": "Help Net Security",
+              "url": "https://www.helpnetsecurity.com/2026/11/27/artex-ai-pentest-framework-china-north-korea-state-hackers/"
+            },
+            {
+              "name": "The Register",
+              "url": "https://www.theregister.com/security/2026/11/26/microsoft-hackers-in-china-n-korea-using-artex-ai-tool-to-break-into-global-tech-systems/5312433"
+            }
+          ]
+        },
+        {
+          "headline": "North Korea-linked PolinRider campaign poisons more than 7,600 GitHub repositories",
+          "body": "The Hacker News, citing Apiiro, reports that the PolinRider loader has been found in at least 7,609 GitHub repositories owned by 2,330 accounts, most of them real developer accounts. SafeDep says the Python loader hides in a small utils package or conftest.py and runs when Python imports the file. The activity may date back to February 2025.",
+          "why": "Cloning and running an infected project is enough to spread the malware. Review recent commits to build and test files, rotate GitHub tokens, and be careful running code from forks.",
+          "sources": [
+            {
+              "name": "The Hacker News",
+              "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html"
+            }
+          ]
+        },
+        {
+          "headline": "Flight Centre says a third-party booking system breach exposed customer records",
+          "body": "Australian travel group Flight Centre says a significant number of customer records may have been accessed in a third-party accommodation booking system used by its Flight Centre, Travel Associates and Cruiseabout brands. It says most records contain names and travel information. A very small share include limited passport details, email addresses, phone numbers, birth dates or, rarely, health and mobility information. The company says payment card data, flight bookings and corporate bookings were not affected.",
+          "why": "Travel data is useful for convincing phishing, so affected customers should be wary of unexpected booking messages. The Australian Passport Office says a compromised passport remains valid.",
+          "sources": [
+            {
+              "name": "ABC News (Australia)",
+              "url": "https://www.abc.net.au/news/2026-11-26/flight-centre-investigating-cyber-breach-passports-details/107432534"
+            },
+            {
+              "name": "Australian Passport Office",
+              "url": "https://www.passports.gov.au/news/flight-centre-data-breach"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "items": [
+        {
+          "headline": "Google will require AI agents to reach Workspace data through its MCP servers or CLI",
+          "body": "Google made its Workspace MCP servers and Workspace CLI generally available. Under a new Workspace AI Tools Addendum, AI agents must use them instead of calling Workspace REST APIs directly, with technical enforcement starting February 1, 2027. Google says this lets admins manage agent access in the admin console and check every call against Workspace permissions, DLP rules and classification labels. Agents that keep calling REST APIs directly will be limited to Standard Tier quotas.",
+          "why": "Teams building agents on Gmail, Drive or Calendar should plan the migration now. Admins get a central place to see and revoke agent access.",
+          "sources": [
+            {
+              "name": "Google Workspace Updates",
+              "url": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html"
+            },
+            {
+              "name": "Google Workspace Blog",
+              "url": "https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace"
+            }
+          ]
+        },
+        {
+          "headline": "UK financial regulator says Meta declined joint sandbox testing of its Muse agent",
+          "body": "Colin Payne, head of innovation at the UK Financial Conduct Authority, told WIRED that Meta turned down a suggestion last week to test Muse jointly in the regulator's sandbox before the UK launch on Tuesday. The FCA had wanted to see how the personal assistant would interact with ordinary customers. Meta told WIRED it has engaged constructively with the appropriate regulators.",
+          "why": "Sandbox testing is voluntary, but regulators are now saying publicly when agent makers decline it. Expect closer scrutiny of agents that handle payments or purchases.",
+          "sources": [
+            {
+              "name": "WIRED",
+              "url": "https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/"
+            }
+          ]
+        },
+        {
+          "headline": "Nvidia pauses server shipments to four Southeast Asian countries under new US export rules",
+          "body": "Reuters, citing the Financial Times, reports that Nvidia told manufacturing partners such as Dell and Supermicro to stop shipping servers with its chips to Malaysia, Singapore, Thailand and Indonesia. The move follows US rules that took effect November 19 and require export licenses for advanced chips to several Southeast Asian countries. The FT says it is unclear whether the halt is temporary.",
+          "why": "Companies planning AI capacity in these markets should expect delays and stricter know-your-customer checks while licensing is worked out.",
+          "sources": [
+            {
+              "name": "Reuters",
+              "url": "https://www.reuters.com/world/asia-pacific/nvidia-halts-chip-shipments-southeast-asia-ft-reports-2026-11-26/"
+            }
+          ]
+        },
+        {
+          "headline": "OpenAI begins piloting Private Inference with enterprise customers",
+          "body": "Sam Altman said OpenAI has started testing Private Inference, an alpha feature that uses confidential computing to protect business prompts and responses while its models process them, with a small group of customers. OpenAI says the hardware's security can be independently verified. The company said it is adding compute for a larger rollout but gave no date, pricing or customer names.",
+          "why": "Verifiable confidential computing could change vendor risk reviews for sensitive workloads, but there is no track record yet. Ask for the attestation details before relying on it.",
+          "sources": [
+            {
+              "name": "The Next Web",
+              "url": "https://thenextweb.com/news/openai-private-inference-testing-customers"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaway": "Patches alone do not always close a door. Drupal's follow-up flaw shows that reachable installers and leftover states keep sites exposed, and agent frameworks like ARTEX find such gaps quickly. Remove unused entry points, verify the fix as well as installing it, and route AI agents through governed interfaces like the ones Google is now mandating."
+}
