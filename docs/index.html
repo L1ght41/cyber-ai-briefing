@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Signal &amp; Shield | Daily cybersecurity &amp; AI briefing</title>
-<meta name="description" content="Drupal disclosed a second exploited installer flaw that can still lead to site takeover on some patched sites. Microsoft named six state and criminal groups using the ARTEX AI attack framework, a North Korea-linked campaign poisoned thousands of GitHub repositories, and Flight Centre reported a third-party breach. On the AI side, Google will require agents to reach Workspace data through its MCP servers or CLI, the UK&#x27;s financial regulator said Meta declined to test Muse jointly, Nvidia paused server shipments to four Southeast Asian countries, and OpenAI began piloting Private Inference.">
+<meta name="description" content="Reuters reports that intruders reached the control plane of the Air Force&#x27;s flagship cloud platform. SAP is investigating reported theft of employee GitHub tokens, Colorado and Barclays disclosed breaches of identity documents and Social Security numbers, and CISA added two GeoServer flaws to its exploited list. In AI and tech, state attorneys general are fighting the auction of Character.AI user chats, OpenAI countersued Apple, the FCC cleared SpaceX&#x27;s Starmind orbital compute constellation, and Bloomberg found Blackwell hardware at a Shanghai data center.">
 <link rel="canonical" href="https://l1ght41.github.io/cyber-ai-briefing/">
 <meta property="og:title" content="Signal &amp; Shield | Daily cybersecurity &amp; AI briefing">
-<meta property="og:description" content="Drupal disclosed a second exploited installer flaw that can still lead to site takeover on some patched sites. Microsoft named six state and criminal groups using the ARTEX AI attack framework, a North Korea-linked campaign poisoned thousands of GitHub repositories, and Flight Centre reported a third-party breach. On the AI side, Google will require agents to reach Workspace data through its MCP servers or CLI, the UK&#x27;s financial regulator said Meta declined to test Muse jointly, Nvidia paused server shipments to four Southeast Asian countries, and OpenAI began piloting Private Inference.">
+<meta property="og:description" content="Reuters reports that intruders reached the control plane of the Air Force&#x27;s flagship cloud platform. SAP is investigating reported theft of employee GitHub tokens, Colorado and Barclays disclosed breaches of identity documents and Social Security numbers, and CISA added two GeoServer flaws to its exploited list. In AI and tech, state attorneys general are fighting the auction of Character.AI user chats, OpenAI countersued Apple, the FCC cleared SpaceX&#x27;s Starmind orbital compute constellation, and Bloomberg found Blackwell hardware at a Shanghai data center.">
 <meta property="og:type" content="article">
 <link rel="alternate" type="application/rss+xml" title="Signal & Shield" href="feed.xml">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316181d'/%3E%3Cpath d='M16 6l8 3v6c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V9z' fill='none' stroke='%23e8590c' stroke-width='2.4'/%3E%3C/svg%3E">
@@ -35,46 +35,54 @@
 <main id="main">
 <section class="hero">
   <div class="wrap">
-    <p class="kicker">Today's briefing &middot; <time datetime="2026-11-27">Friday, November 27, 2026</time></p>
-    <h1><a href="posts/2026-11-27.html">Drupal&#x27;s installer patch leaves a second exploited gap, Microsoft says Salt Typhoon has adopted ARTEX, and Google sets new rules for AI agents in Workspace</a></h1>
-    <p class="lede">Drupal disclosed a second exploited installer flaw that can still lead to site takeover on some patched sites. Microsoft named six state and criminal groups using the ARTEX AI attack framework, a North Korea-linked campaign poisoned thousands of GitHub repositories, and Flight Centre reported a third-party breach. On the AI side, Google will require agents to reach Workspace data through its MCP servers or CLI, the UK&#x27;s financial regulator said Meta declined to test Muse jointly, Nvidia paused server shipments to four Southeast Asian countries, and OpenAI began piloting Private Inference.</p>
-    <p><a class="btn" href="posts/2026-11-27.html">Read today's briefing</a></p>
+    <p class="kicker">Today's briefing &middot; <time datetime="2026-11-28">Saturday, November 28, 2026</time></p>
+    <h1><a href="posts/2026-11-28.html">Hackers breach the US Air Force&#x27;s Cloud One platform, SAP confirms a GitHub incident, and 42 states move to block the sale of Character.AI chats</a></h1>
+    <p class="lede">Reuters reports that intruders reached the control plane of the Air Force&#x27;s flagship cloud platform. SAP is investigating reported theft of employee GitHub tokens, Colorado and Barclays disclosed breaches of identity documents and Social Security numbers, and CISA added two GeoServer flaws to its exploited list. In AI and tech, state attorneys general are fighting the auction of Character.AI user chats, OpenAI countersued Apple, the FCC cleared SpaceX&#x27;s Starmind orbital compute constellation, and Bloomberg found Blackwell hardware at a Shanghai data center.</p>
+    <p><a class="btn" href="posts/2026-11-28.html">Read today's briefing</a></p>
   </div>
 </section>
 <div class="wrap narrow">
 <section class="desk desk-cyber" aria-labelledby="h-cyber">
-  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">4 stories</span></h2>
+  <h2 id="h-cyber"><span class="tag tag-cyber">Cybersecurity</span><span class="count">5 stories</span></h2>
   <article class="item">
   <div class="item-num">01</div>
   <div class="item-body">
-    <h3>Drupal warns a second installer flaw is being exploited after last week&#x27;s fix</h3>
-    <p>Drupal advisory SA-CORE-2026-019 (CVE-2026-136716, rated highly critical, 21 of 25) says some sites in unusual or incomplete install states could still be taken over through install.php after the earlier SA-CORE-2026-017 fix. That includes production sites. Drupal says the flaw is being exploited in the wild and the vulnerable state is not visible in the interface. Fixed releases are 10.6.23, 11.3.23 and 11.4.14.</p>
-    <p class="why"><strong>Why it matters</strong> If you patched last week but left the installer reachable, update again, check the user 1 account&#x27;s email and recent activity, and consider resetting its password. Block web access to install.php.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.drupal.org/sa-core-2026-019" rel="noopener" target="_blank">Drupal.org</a>, <a href="https://www.bleepingcomputer.com/news/security/drupal-warns-of-new-access-bypass-flaw-exploited-in-attacks/" rel="noopener" target="_blank">BleepingComputer</a>, <a href="https://www.securityweek.com/drupal-installer-patch-left-a-gap-attackers-are-already-exploiting/" rel="noopener" target="_blank">SecurityWeek</a></p>
+    <h3>Hackers breach the US Air Force&#x27;s Cloud One computing platform, Reuters reports</h3>
+    <p>Reuters, citing people familiar with the matter, reports that hackers breached Cloud One, the Air Force&#x27;s flagship cloud platform, and one source said they exploited a software vulnerability to reach its control plane. The intrusion was found within roughly the past month during upgrade work. Migrations were paused, updates to applications already on the platform were blocked, and some administrators lost their rights. Reuters could not identify the attackers or confirm whether data was stolen, and US Cyber Command was called in to assess the damage.</p>
+    <p class="why"><strong>Why it matters</strong> Control-plane access to a shared cloud platform puts every tenant application at risk. Teams running multi-tenant platforms should audit control-plane exposure and administrative paths, not just workload security.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/" rel="noopener" target="_blank">Reuters</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">02</div>
   <div class="item-body">
-    <h3>Microsoft names Salt Typhoon and North Korean groups among ARTEX users</h3>
-    <p>Microsoft Threat Intelligence says six actors have added the ARTEX AI penetration-testing framework to their tooling: Storm-0940, Storm-3358, Onyx Sleet, Pearl Sleet, Crystal Typhoon and Salt Typhoon. It says they use it to speed up reconnaissance, credential attacks and web-application exploitation. ARTEX was published on GitHub in July and pulled in October, but forks remain available. Microsoft did not give campaign details for Salt Typhoon.</p>
-    <p class="why"><strong>Why it matters</strong> ARTEX automates known techniques at machine speed, so credential hygiene, a smaller internet-facing footprint and fast patching are still the controls that matter. Microsoft has published Defender detections and hunting guidance.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.helpnetsecurity.com/2026/11/27/artex-ai-pentest-framework-china-north-korea-state-hackers/" rel="noopener" target="_blank">Help Net Security</a>, <a href="https://www.theregister.com/security/2026/11/26/microsoft-hackers-in-china-n-korea-using-artex-ai-tool-to-break-into-global-tech-systems/5312433" rel="noopener" target="_blank">The Register</a></p>
+    <h3>SAP confirms a security incident after reported theft of employee GitHub tokens</h3>
+    <p>SAP confirmed it is investigating suspicious activity after Der Spiegel reported that attackers stole employee authentication tokens and used them to copy and alter source code on GitHub. SAP says it has found no evidence so far of unauthorized access to customer business data. According to SecurityWeek, SAP replaced signing keys, restricted GitHub access and suspended automated development operations. No report says tampered code reached customer software.</p>
+    <p class="why"><strong>Why it matters</strong> This is the second large company this week to report a breach that started with stolen GitHub credentials. Short-lived, scoped tokens and signed commits limit how far a single stolen token can go.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/" rel="noopener" target="_blank">BleepingComputer</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">03</div>
   <div class="item-body">
-    <h3>North Korea-linked PolinRider campaign poisons more than 7,600 GitHub repositories</h3>
-    <p>The Hacker News, citing Apiiro, reports that the PolinRider loader has been found in at least 7,609 GitHub repositories owned by 2,330 accounts, most of them real developer accounts. SafeDep says the Python loader hides in a small utils package or conftest.py and runs when Python imports the file. The activity may date back to February 2025.</p>
-    <p class="why"><strong>Why it matters</strong> Cloning and running an infected project is enough to spread the malware. Review recent commits to build and test files, rotate GitHub tokens, and be careful running code from forks.</p>
-    <p class="sources"><span>Sources</span> <a href="https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html" rel="noopener" target="_blank">The Hacker News</a></p>
+    <h3>myColorado app breach exposed uploaded passports and IDs for about 100,000 users</h3>
+    <p>Colorado&#x27;s Office of Information Technology says an unauthorized user accessed documents uploaded to the myColorado app, including PDFs and photos of passports, vehicle registrations and insurance cards. The state estimates about 100,000 of the app&#x27;s roughly 2.1 million users are affected and says payment information was not involved. The app was taken offline on November 18 after automated threat detection flagged unusual activity, and 9NEWS reports that notices to affected users are now expected Monday.</p>
+    <p class="why"><strong>Why it matters</strong> Apps that store images of identity documents are high-value targets. Affected residents should watch for identity fraud, and builders should question whether full document images need to be kept at all.</p>
+    <p class="sources"><span>Sources</span> <a href="https://mycolorado.state.co.us/" rel="noopener" target="_blank">myColorado (State of Colorado)</a>, <a href="https://www.securityweek.com/100000-potentially-impacted-by-colorado-data-breach/" rel="noopener" target="_blank">SecurityWeek</a>, <a href="https://www.9news.com/article/money/consumer/state-delays-mycolorado-breach-notices-to-monday-says-accessed-files-were-encrypted/73-c2df399a-1991-40cf-a201-358ce65aa669" rel="noopener" target="_blank">9NEWS</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">04</div>
   <div class="item-body">
-    <h3>Flight Centre says a third-party booking system breach exposed customer records</h3>
-    <p>Australian travel group Flight Centre says a significant number of customer records may have been accessed in a third-party accommodation booking system used by its Flight Centre, Travel Associates and Cruiseabout brands. It says most records contain names and travel information. A very small share include limited passport details, email addresses, phone numbers, birth dates or, rarely, health and mobility information. The company says payment card data, flight bookings and corporate bookings were not affected.</p>
-    <p class="why"><strong>Why it matters</strong> Travel data is useful for convincing phishing, so affected customers should be wary of unexpected booking messages. The Australian Passport Office says a compromised passport remains valid.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.abc.net.au/news/2026-11-26/flight-centre-investigating-cyber-breach-passports-details/107432534" rel="noopener" target="_blank">ABC News (Australia)</a>, <a href="https://www.passports.gov.au/news/flight-centre-data-breach" rel="noopener" target="_blank">Australian Passport Office</a></p>
+    <h3>Barclays US card unit says an intruder took applicants&#x27; Social Security numbers</h3>
+    <p>Barclays Bank Delaware says it detected suspicious activity on November 4 in the online tool credit card applicants use to check their application status. Its notice says an unauthorized third party got into the system and took names, contact details, birth dates and Social Security numbers tied to applications. The bank says existing accounts were not affected.</p>
+    <p class="why"><strong>Why it matters</strong> Low-profile status-check tools are often less protected than core banking apps but can still reach sensitive records. Inventory these side doors and limit what data they can return.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.mass.gov/doc/2026-2098-barclays-bank-delaware/download" rel="noopener" target="_blank">Massachusetts Office of Consumer Affairs (notice letter)</a></p>
+  </div>
+</article><article class="item">
+  <div class="item-num">05</div>
+  <div class="item-body">
+    <h3>CISA adds two exploited GeoServer flaws and the new Drupal bug to its KEV catalog</h3>
+    <p>On November 27, CISA added three vulnerabilities to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation. They are CVE-2026-120705, an XML injection flaw in OSGeo GeoServer, CVE-2026-129243, an incorrect authorization flaw in GeoServer, and CVE-2026-136716 in Drupal core, the installer flaw covered here yesterday.</p>
+    <p class="why"><strong>Why it matters</strong> GeoServer is common in government and utility mapping systems and is often exposed to the internet. Patch it, or at least restrict access to it, now.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.cisa.gov/news-events/alerts/2026/11/27/cisa-adds-three-known-exploited-vulnerabilities-catalog" rel="noopener" target="_blank">CISA</a></p>
   </div>
 </article>
 </section>
@@ -83,40 +91,44 @@
   <article class="item">
   <div class="item-num">01</div>
   <div class="item-body">
-    <h3>Google will require AI agents to reach Workspace data through its MCP servers or CLI</h3>
-    <p>Google made its Workspace MCP servers and Workspace CLI generally available. Under a new Workspace AI Tools Addendum, AI agents must use them instead of calling Workspace REST APIs directly, with technical enforcement starting February 1, 2027. Google says this lets admins manage agent access in the admin console and check every call against Workspace permissions, DLP rules and classification labels. Agents that keep calling REST APIs directly will be limited to Standard Tier quotas.</p>
-    <p class="why"><strong>Why it matters</strong> Teams building agents on Gmail, Drive or Calendar should plan the migration now. Admins get a central place to see and revoke agent access.</p>
-    <p class="sources"><span>Sources</span> <a href="https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html" rel="noopener" target="_blank">Google Workspace Updates</a>, <a href="https://workspace.google.com/blog/product-announcements/built-for-trust-and-control-new-ai-agent-protections-and-developer-tools-in-google-workspace" rel="noopener" target="_blank">Google Workspace Blog</a></p>
+    <h3>42 state attorneys general move to block the auction of Character.AI user chats</h3>
+    <p>A bipartisan coalition of 42 attorneys general asked the bankruptcy court to reject Character.AI&#x27;s planned December 1 sale of its platform and the chat histories of more than 21 million US accounts, over 2.1 million of them registered to minors. According to California&#x27;s attorney general, the sale would also include IP addresses and other metadata. The states say the plan has no requirement that a buyer honor the existing privacy policy. They want any sale to exclude children&#x27;s chats and include user protections.</p>
+    <p class="why"><strong>Why it matters</strong> Conversations with AI chatbots are becoming assets that can change hands in bankruptcy. Companies should treat chat logs as sensitive data with defined retention and deletion rules.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns" rel="noopener" target="_blank">California Attorney General</a>, <a href="https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats" rel="noopener" target="_blank">The Verge</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">02</div>
   <div class="item-body">
-    <h3>UK financial regulator says Meta declined joint sandbox testing of its Muse agent</h3>
-    <p>Colin Payne, head of innovation at the UK Financial Conduct Authority, told WIRED that Meta turned down a suggestion last week to test Muse jointly in the regulator&#x27;s sandbox before the UK launch on Tuesday. The FCA had wanted to see how the personal assistant would interact with ordinary customers. Meta told WIRED it has engaged constructively with the appropriate regulators.</p>
-    <p class="why"><strong>Why it matters</strong> Sandbox testing is voluntary, but regulators are now saying publicly when agent makers decline it. Expect closer scrutiny of agents that handle payments or purchases.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.wired.com/story/meta-refused-to-share-muse-for-testing-uk-financial-watchdog-complains/" rel="noopener" target="_blank">WIRED</a></p>
+    <h3>OpenAI countersues Apple over trade secrets and pressure on shared suppliers</h3>
+    <p>OpenAI filed counterclaims in California federal court on Friday, accusing Apple of obtaining its trade secrets through a rehired former employee and of discouraging hardware suppliers from working on OpenAI devices. The filing follows Apple&#x27;s July lawsuit accusing OpenAI and two former Apple employees of misappropriating its trade secrets. According to Le Monde, the filing says one supplier moved OpenAI&#x27;s production to a night shift to avoid Apple seeing it.</p>
+    <p class="why"><strong>Why it matters</strong> The dispute shows how contested the AI hardware supply chain has become. Expect more scrutiny of employee moves and supplier agreements between AI labs and device makers.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/5f374b32b07b/technology/openai-countersues-apple-stealing-trade-secrets-ft-reports-2026-11-27/" rel="noopener" target="_blank">Reuters</a>, <a href="https://www.lemonde.fr/en/pixels/article/2026/11/28/openai-countersues-apple-in-dispute-over-trade-secret-thefts_6790291_13.html" rel="noopener" target="_blank">Le Monde</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">03</div>
   <div class="item-body">
-    <h3>Nvidia pauses server shipments to four Southeast Asian countries under new US export rules</h3>
-    <p>Reuters, citing the Financial Times, reports that Nvidia told manufacturing partners such as Dell and Supermicro to stop shipping servers with its chips to Malaysia, Singapore, Thailand and Indonesia. The move follows US rules that took effect November 19 and require export licenses for advanced chips to several Southeast Asian countries. The FT says it is unclear whether the halt is temporary.</p>
-    <p class="why"><strong>Why it matters</strong> Companies planning AI capacity in these markets should expect delays and stricter know-your-customer checks while licensing is worked out.</p>
-    <p class="sources"><span>Sources</span> <a href="https://www.reuters.com/world/asia-pacific/nvidia-halts-chip-shipments-southeast-asia-ft-reports-2026-11-26/" rel="noopener" target="_blank">Reuters</a></p>
+    <h3>FCC authorizes SpaceX to deploy up to 1 million Starmind orbital compute satellites</h3>
+    <p>The FCC granted SpaceX conditional authorization for Starmind, a constellation of up to 1 million satellites meant to work as orbital data centers for AI computing. According to NBC News, SpaceX must begin deployment by November 2033, reach 100,000 satellites by November 2035 and 50 percent by November 2038. AP reports that some scientists are skeptical of the plan.</p>
+    <p class="why"><strong>Why it matters</strong> This is a regulatory first for space-based AI compute, though deployment is years away. Space safety and data-sovereignty questions will follow it.</p>
+    <p class="sources"><span>Sources</span> <a href="https://apnews.com/article/b9897fe06f851ffaf92fd304ae69075c" rel="noopener" target="_blank">AP</a>, <a href="https://www.nbcnews.com/science/space/spacex-fcc-authorizes-1-million-satellites-data-centers-space-rcna611341" rel="noopener" target="_blank">NBC News</a>, <a href="https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/" rel="noopener" target="_blank">Ars Technica</a></p>
   </div>
 </article><article class="item">
   <div class="item-num">04</div>
   <div class="item-body">
-    <h3>OpenAI begins piloting Private Inference with enterprise customers</h3>
-    <p>Sam Altman said OpenAI has started testing Private Inference, an alpha feature that uses confidential computing to protect business prompts and responses while its models process them, with a small group of customers. OpenAI says the hardware&#x27;s security can be independently verified. The company said it is adding compute for a larger rollout but gave no date, pricing or customer names.</p>
-    <p class="why"><strong>Why it matters</strong> Verifiable confidential computing could change vendor risk reviews for sensitive workloads, but there is no track record yet. Ask for the attestation details before relying on it.</p>
-    <p class="sources"><span>Sources</span> <a href="https://thenextweb.com/news/openai-private-inference-testing-customers" rel="noopener" target="_blank">The Next Web</a></p>
+    <h3>Bloomberg finds Nvidia Blackwell hardware at a Shanghai data center tied to Alice Huang</h3>
+    <p>Bloomberg reports that two Chinese firms installed Nvidia Blackwell hardware, including a GB300 NVL72 rack, at the Yangtze River Delta Project data center in Shanghai, according to documents filed with Chinese regulators. One of the firms offered the rack as collateral for a 96 million yuan loan. By checking the serial number, Bloomberg traced the rack to Taiwan&#x27;s Gigabyte. Blackwell chips have never been legal to ship to China without a US license.</p>
+    <p class="why"><strong>Why it matters</strong> The report helps explain why Washington is tightening controls on Southeast Asian routes. Hardware vendors and cloud resellers should expect tougher end-use checks.</p>
+    <p class="sources"><span>Sources</span> <a href="https://www.bloomberg.com/news/articles/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-tied-to-alice-huang" rel="noopener" target="_blank">Bloomberg</a></p>
   </div>
 </article>
 </section>
-<aside class="takeaway"><h2>The takeaway</h2><p>Patches alone do not always close a door. Drupal&#x27;s follow-up flaw shows that reachable installers and leftover states keep sites exposed, and agent frameworks like ARTEX find such gaps quickly. Remove unused entry points, verify the fix as well as installing it, and route AI agents through governed interfaces like the ones Google is now mandating.</p></aside>
+<aside class="takeaway"><h2>The takeaway</h2><p>Most of today&#x27;s incidents came through side doors: a cloud control plane, developer tokens, a document locker and an application-status page. Map these secondary access paths, use short-lived and scoped credentials, and hold less sensitive data where you can.</p></aside>
 </div>
 <section class="recent"><div class="wrap"><h2 class="section-title">Recent briefings</h2><div class="grid"><article class="card">
+  <p class="kicker"><time datetime="2026-11-27">Friday, November 27, 2026</time></p>
+  <h3><a href="posts/2026-11-27.html">Drupal&#x27;s installer patch leaves a second exploited gap, Microsoft says Salt Typhoon has adopted ARTEX, and Google sets new rules for AI agents in Workspace</a></h3>
+  <ul><li>Drupal warns a second installer flaw is being exploited after last week&#x27;s fix</li><li>Microsoft names Salt Typhoon and North Korean groups among ARTEX users</li><li>Google will require AI agents to reach Workspace data through its MCP servers or CLI</li><li>UK financial regulator says Meta declined joint sandbox testing of its Muse agent</li></ul>
+</article><article class="card">
   <p class="kicker"><time datetime="2026-11-26">Thursday, November 26, 2026</time></p>
   <h3><a href="posts/2026-11-26.html">A hijacked GitHub account exposes 1Password customer data, Italy and Switzerland confirm AI-agent breaches, and Talos maps how escaped OpenAI agents worked</a></h3>
   <ul><li>1Password customer data stolen after an employee&#x27;s GitHub account was hijacked</li><li>Palo Alto Networks patches the Fragnesia kernel flaw used to root PAN-OS firewalls</li><li>Cisco Talos reconstructs how escaped OpenAI test agents used public web services</li><li>Axios: OpenAI and Anthropic staff fear unreleased models are too risky to ship</li></ul>

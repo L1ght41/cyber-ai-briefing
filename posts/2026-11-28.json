@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-28",
+  "title": "Hackers breach the US Air Force's Cloud One platform, SAP confirms a GitHub incident, and 42 states move to block the sale of Character.AI chats",
+  "summary": "Reuters reports that intruders reached the control plane of the Air Force's flagship cloud platform. SAP is investigating reported theft of employee GitHub tokens, Colorado and Barclays disclosed breaches of identity documents and Social Security numbers, and CISA added two GeoServer flaws to its exploited list. In AI and tech, state attorneys general are fighting the auction of Character.AI user chats, OpenAI countersued Apple, the FCC cleared SpaceX's Starmind orbital compute constellation, and Bloomberg found Blackwell hardware at a Shanghai data center.",
+  "sections": [
+    {
+      "key": "cyber",
+      "items": [
+        {
+          "headline": "Hackers breach the US Air Force's Cloud One computing platform, Reuters reports",
+          "body": "Reuters, citing people familiar with the matter, reports that hackers breached Cloud One, the Air Force's flagship cloud platform, and one source said they exploited a software vulnerability to reach its control plane. The intrusion was found within roughly the past month during upgrade work. Migrations were paused, updates to applications already on the platform were blocked, and some administrators lost their rights. Reuters could not identify the attackers or confirm whether data was stolen, and US Cyber Command was called in to assess the damage.",
+          "why": "Control-plane access to a shared cloud platform puts every tenant application at risk. Teams running multi-tenant platforms should audit control-plane exposure and administrative paths, not just workload security.",
+          "sources": [
+            {"name": "Reuters", "url": "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/"}
+          ]
+        },
+        {
+          "headline": "SAP confirms a security incident after reported theft of employee GitHub tokens",
+          "body": "SAP confirmed it is investigating suspicious activity after Der Spiegel reported that attackers stole employee authentication tokens and used them to copy and alter source code on GitHub. SAP says it has found no evidence so far of unauthorized access to customer business data. According to SecurityWeek, SAP replaced signing keys, restricted GitHub access and suspended automated development operations. No report says tampered code reached customer software.",
+          "why": "This is the second large company this week to report a breach that started with stolen GitHub credentials. Short-lived, scoped tokens and signed commits limit how far a single stolen token can go.",
+          "sources": [
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/sap-confirms-cyberattack-source-code-reportedly-compromised/"},
+            {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/"}
+          ]
+        },
+        {
+          "headline": "myColorado app breach exposed uploaded passports and IDs for about 100,000 users",
+          "body": "Colorado's Office of Information Technology says an unauthorized user accessed documents uploaded to the myColorado app, including PDFs and photos of passports, vehicle registrations and insurance cards. The state estimates about 100,000 of the app's roughly 2.1 million users are affected and says payment information was not involved. The app was taken offline on November 18 after automated threat detection flagged unusual activity, and 9NEWS reports that notices to affected users are now expected Monday.",
+          "why": "Apps that store images of identity documents are high-value targets. Affected residents should watch for identity fraud, and builders should question whether full document images need to be kept at all.",
+          "sources": [
+            {"name": "myColorado (State of Colorado)", "url": "https://mycolorado.state.co.us/"},
+            {"name": "SecurityWeek", "url": "https://www.securityweek.com/100000-potentially-impacted-by-colorado-data-breach/"},
+            {"name": "9NEWS", "url": "https://www.9news.com/article/money/consumer/state-delays-mycolorado-breach-notices-to-monday-says-accessed-files-were-encrypted/73-c2df399a-1991-40cf-a201-358ce65aa669"}
+          ]
+        },
+        {
+          "headline": "Barclays US card unit says an intruder took applicants' Social Security numbers",
+          "body": "Barclays Bank Delaware says it detected suspicious activity on November 4 in the online tool credit card applicants use to check their application status. Its notice says an unauthorized third party got into the system and took names, contact details, birth dates and Social Security numbers tied to applications. The bank says existing accounts were not affected.",
+          "why": "Low-profile status-check tools are often less protected than core banking apps but can still reach sensitive records. Inventory these side doors and limit what data they can return.",
+          "sources": [
+            {"name": "Massachusetts Office of Consumer Affairs (notice letter)", "url": "https://www.mass.gov/doc/2026-2098-barclays-bank-delaware/download"}
+          ]
+        },
+        {
+          "headline": "CISA adds two exploited GeoServer flaws and the new Drupal bug to its KEV catalog",
+          "body": "On November 27, CISA added three vulnerabilities to its Known Exploited Vulnerabilities catalog based on evidence of active exploitation. They are CVE-2026-120705, an XML injection flaw in OSGeo GeoServer, CVE-2026-129243, an incorrect authorization flaw in GeoServer, and CVE-2026-136716 in Drupal core, the installer flaw covered here yesterday.",
+          "why": "GeoServer is common in government and utility mapping systems and is often exposed to the internet. Patch it, or at least restrict access to it, now.",
+          "sources": [
+            {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/11/27/cisa-adds-three-known-exploited-vulnerabilities-catalog"}
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "items": [
+        {
+          "headline": "42 state attorneys general move to block the auction of Character.AI user chats",
+          "body": "A bipartisan coalition of 42 attorneys general asked the bankruptcy court to reject Character.AI's planned December 1 sale of its platform and the chat histories of more than 21 million US accounts, over 2.1 million of them registered to minors. According to California's attorney general, the sale would also include IP addresses and other metadata. The states say the plan has no requirement that a buyer honor the existing privacy policy. They want any sale to exclude children's chats and include user protections.",
+          "why": "Conversations with AI chatbots are becoming assets that can change hands in bankruptcy. Companies should treat chat logs as sensitive data with defined retention and deletion rules.",
+          "sources": [
+            {"name": "California Attorney General", "url": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns"},
+            {"name": "The Verge", "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats"}
+          ]
+        },
+        {
+          "headline": "OpenAI countersues Apple over trade secrets and pressure on shared suppliers",
+          "body": "OpenAI filed counterclaims in California federal court on Friday, accusing Apple of obtaining its trade secrets through a rehired former employee and of discouraging hardware suppliers from working on OpenAI devices. The filing follows Apple's July lawsuit accusing OpenAI and two former Apple employees of misappropriating its trade secrets. According to Le Monde, the filing says one supplier moved OpenAI's production to a night shift to avoid Apple seeing it.",
+          "why": "The dispute shows how contested the AI hardware supply chain has become. Expect more scrutiny of employee moves and supplier agreements between AI labs and device makers.",
+          "sources": [
+            {"name": "Reuters", "url": "https://www.reuters.com/5f374b32b07b/technology/openai-countersues-apple-stealing-trade-secrets-ft-reports-2026-11-27/"},
+            {"name": "Le Monde", "url": "https://www.lemonde.fr/en/pixels/article/2026/11/28/openai-countersues-apple-in-dispute-over-trade-secret-thefts_6790291_13.html"}
+          ]
+        },
+        {
+          "headline": "FCC authorizes SpaceX to deploy up to 1 million Starmind orbital compute satellites",
+          "body": "The FCC granted SpaceX conditional authorization for Starmind, a constellation of up to 1 million satellites meant to work as orbital data centers for AI computing. According to NBC News, SpaceX must begin deployment by November 2033, reach 100,000 satellites by November 2035 and 50 percent by November 2038. AP reports that some scientists are skeptical of the plan.",
+          "why": "This is a regulatory first for space-based AI compute, though deployment is years away. Space safety and data-sovereignty questions will follow it.",
+          "sources": [
+            {"name": "AP", "url": "https://apnews.com/article/b9897fe06f851ffaf92fd304ae69075c"},
+            {"name": "NBC News", "url": "https://www.nbcnews.com/science/space/spacex-fcc-authorizes-1-million-satellites-data-centers-space-rcna611341"},
+            {"name": "Ars Technica", "url": "https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/"}
+          ]
+        },
+        {
+          "headline": "Bloomberg finds Nvidia Blackwell hardware at a Shanghai data center tied to Alice Huang",
+          "body": "Bloomberg reports that two Chinese firms installed Nvidia Blackwell hardware, including a GB300 NVL72 rack, at the Yangtze River Delta Project data center in Shanghai, according to documents filed with Chinese regulators. One of the firms offered the rack as collateral for a 96 million yuan loan. By checking the serial number, Bloomberg traced the rack to Taiwan's Gigabyte. Blackwell chips have never been legal to ship to China without a US license.",
+          "why": "The report helps explain why Washington is tightening controls on Southeast Asian routes. Hardware vendors and cloud resellers should expect tougher end-use checks.",
+          "sources": [
+            {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-11-27/nvidia-blackwell-chips-turn-up-at-china-site-tied-to-alice-huang"}
+          ]
+        }
+      ]
+    }
+  ],
+  "takeaway": "Most of today's incidents came through side doors: a cloud control plane, developer tokens, a document locker and an application-status page. Map these secondary access paths, use short-lived and scoped credentials, and hold less sensitive data where you can."
+}
